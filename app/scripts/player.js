@@ -15,29 +15,42 @@ window.Player = (function() {
 		this.el = el;
 		this.game = game;
 		this.pos = { x: 0, y: 0 };
+
 	};
 
 	/**
 	 * Resets the state of the player for a new game.
 	 */
 	Player.prototype.reset = function() {
+		this.el.css('animation', '0.4s ebbing alternate infinite');
+		this.started = false;
 		this.pos.x = INITIAL_POSITION_X;
 		this.pos.y = INITIAL_POSITION_Y;
+
 	};
+//	this.el.css('animation', '0.4s ebbing alternate infinite');
 
 	Player.prototype.onFrame = function(delta) {
 		var self = this;
+		// TODO FIX SO ACTS LIKE SPACE BAR
+		
 
-		if(Controls.keys.space){
-		}
-		window.onclick = function(){
+		if(Controls.keys.space) {
+			self.started = true;
 			self.pos.y -= delta * SPEED;
-		};
+			this.el.css('animation', 'none');
+		}
 
+		else if(self.started){
+			self.pos.y += delta * SPEED;
+			console.log('IIIII KEEEEP ON FAAAALLING, IN AND OOOOUUUT');
+		}
 		this.checkCollisionWithBounds();
 
 		// Update UI
 		this.el.css('transform', 'translate(' + this.pos.x + 'em, ' + this.pos.y + 'em)');
+		
+		//animation: 0.4s flap alternate infinite;
 	};
 
 	Player.prototype.checkCollisionWithBounds = function() {

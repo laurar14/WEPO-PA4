@@ -62,7 +62,7 @@ window.Game = (function() {
 	 */
 	Game.prototype.gameover = function() {
 		this.isPlaying = false;
-
+		this.el.css('animation', 'none');
 		// Should be refactored into a Scoreboard class.
 		//TODO
 		var that = this;
