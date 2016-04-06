@@ -15,6 +15,7 @@ window.Player = (function() {
 		this.el = el;
 		this.game = game;
 		this.pos = { x: 0, y: 0 };
+		this.score = 0;
 
 	};
 
@@ -26,6 +27,7 @@ window.Player = (function() {
 		this.started = false;
 		this.pos.x = INITIAL_POSITION_X;
 		this.pos.y = INITIAL_POSITION_Y;
+		this.score = 0;
 
 	};
 //	this.el.css('animation', '0.4s ebbing alternate infinite');
@@ -33,7 +35,6 @@ window.Player = (function() {
 	Player.prototype.onFrame = function(delta) {
 		var self = this;
 		// TODO FIX SO ACTS LIKE SPACE BAR
-		
 
 		if(Controls.keys.space) {
 			self.started = true;

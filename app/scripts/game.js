@@ -48,6 +48,7 @@ window.Game = (function() {
 		this.lastFrame = +new Date() / 1000;
 		window.requestAnimationFrame(this.onFrame);
 		this.isPlaying = true;
+		this.el.css('animation', 'bgMove 10s linear infinite');
 	};
 
 	/**
