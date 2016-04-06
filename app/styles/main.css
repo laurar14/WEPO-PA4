@@ -46,10 +46,10 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 5em;
-	height: 5em;
+	width: 20em;
+	height: 20em;
 
-	background-image: url("../favicon.ico");
+	background-image: url("../images/dabs.png");
   background-repeat: no-repeat;
 }
 
@@ -107,6 +107,7 @@ padding: 0.2em 0;
   margin-left: -51.2em;
   margin-top: -28.8em;
   overflow: hidden;
+  background-color: purple;
   background: url("../images/skyAndFloor.png");
   background-size: contain;
   background-repeat: tile;
@@ -119,4 +120,21 @@ padding: 0.2em 0;
 @keyframes backgroundScroll {
 from {background-position: 0 0;}
 to {background-position: -768px 0;}
+}
+
+.GameCanvasBackground {
+  font-size: 10px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 102.4em;
+  height: 57.6em;
+  margin-left: -51.2em;
+  margin-top: -28.8em;
+  overflow: hidden;
+  background: url("http://i.imgur.com/PhFQkdl.png");
+  background-size: contain;
+  background-repeat: tile;
+  
+  animation: backgroundScroll 20s linear infinite;
 }
