@@ -16,6 +16,18 @@ background: black;
   background-repeat: no-repeat;
 }
 
+.BeetRoot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 75%;
+  height: 75%;
+  background-image: url("../images/beetroot.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+
+}
+
 .Scoreboard {
 	position: absolute;
 	left: 50%;
@@ -100,7 +112,7 @@ to {background-position: -768px 0;}
   background-size: contain;
   background-repeat: tile;
   
-  animation: backgroundScroll 20s linear infinite;
+  animation: bgMove 20s linear infinite;
 }
 
 .LANIMATION {

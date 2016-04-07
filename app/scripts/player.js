@@ -57,8 +57,20 @@ window.Player = (function() {
 	Player.prototype.checkCollisionWithBounds = function() {
 		// CHECK COLLISSION WITH PIPES AND GROUND
 		// Pipes, ground, ceiling??
-		if (this.pos.y < 0 ||
-			this.pos.y + HEIGHT > this.game.WORLD_HEIGHT) {
+		
+		var beetroot = (this.game.beetroot);
+		var beetX = beetroot.pos.x;
+
+		var halfBeetWidth = beetroot.WIDTH;
+		var first = beetX - 5;
+		var second = beetX + 5;
+		var thisX = this.pos.x;
+
+		if (
+			this.pos.y < 0 ||
+			this.pos.y + HEIGHT > this.game.WORLD_HEIGHT ||
+			((this.pos.x >= first) && (this.pos.x <= second) && this.pos.y >= beetroot.pos.y)
+			) {
 			return this.game.gameover();
 		}
 	};
