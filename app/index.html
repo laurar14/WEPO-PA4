@@ -20,18 +20,19 @@
         <!-- endbuild -->
     </head>
     <body>
+
+    <div class="audioPlayer">
+                <audio id="audio" src="../sounds/circus_8bit.wav" autoplay loop></audio>
+                <!--<audio id="audioextra" src="../sounds/gameover_8bit.wav"></audio>
+                        THIS IS FOR ANY EXTRA SOUNDS-->
+    </div>
         
         <!--[if lt IE 10]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-    <div class="container GameCanvasBackground">
+    <div id="GameCanvasBackground">
         <div class="GameCanvas">
             <div class="BeetRoot"></div>
-            <div class="audioPlayer">
-                <audio id="audio" src="../sounds/circus_8bit.wav" autoplay loop></audio>
-                <!--<audio id="audioextra" src="../sounds/gameover_8bit.wav"></audio>
-                        THIS IS FOR ANY EXTRA SOUNDS-->
-            </div>
             <div class="playerBlock">
                 <div class="Player"></div>
             </div>

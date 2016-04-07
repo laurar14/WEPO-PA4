@@ -1,6 +1,8 @@
 
 window.Game = (function() {
 	'use strict';
+
+	var audio = document.getElementById("audio");
 	/**
 	 * Main game class.
 	 * @param {Element} el jQuery element containing the game.
@@ -66,7 +68,6 @@ window.Game = (function() {
 		window.requestAnimationFrame(this.onFrame);
 		this.isPlaying = true;
 
-		var audio = document.getElementById("audio");
 		audio.src = "../sounds/circus_8bit.wav";
 		audio.loop = true;
 	};
@@ -96,7 +97,7 @@ window.Game = (function() {
 					scoreboardEl.removeClass('is-visible');
 					that.start();
 				});
-		var audio = document.getElementById("audio");
+
 		audio.src = "../sounds/gameover_8bit.wav";
 		audio.loop = false;
 	};
