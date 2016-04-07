@@ -20,33 +20,37 @@
         <!-- endbuild -->
     </head>
     <body>
-
-    <div class="audioPlayer">
-                <audio id="audio" src="../sounds/circus_8bit.wav" autoplay loop></audio>
-                <!--<audio id="audioextra" src="../sounds/gameover_8bit.wav"></audio>
+    <div class="container">
+        <div class="audioPlayer">
+        <button id="mute" type="button" class="btn btn-primary btn-sm" data-text-swap="Unmute">
+            <span class='glyphicon glyphicon-volume-off'></span> Mute
+        </button>
+            <audio id="audio" src="../sounds/circus_8bit.wav" autoplay="autoplay" loop></audio>
+            <!--<audio id="audioextra" src="../sounds/gameover_8bit.wav"></audio>
                         THIS IS FOR ANY EXTRA SOUNDS-->
-    </div>
-        
-        <!--[if lt IE 10]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-    <div id="GameCanvasBackground">
-        <div class="GameCanvas">
-            <div class="BeetRoot"></div>
-            <div class="playerBlock">
-                <div class="Player"></div>
-            </div>
-            <div class="ground"></div>
-            <!--<h2 style="color: blue">add back the ground</h2>-->
-            <div class="Scoreboard">
-                <span class="Scoreboard-scoreText">Score: </span><br>
-                <span class="Scoreboard-scoreText">Highscore: </span><br>
-                <button class="Scoreboard-restart">
-                    <span class="Scoreboard-restartText">Restart</span>
-                </button>
+        </div>
+            
+            <!--[if lt IE 10]>
+                <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+            <![endif]-->
+        <div id="GameCanvasBackground">        
+            <div class="GameCanvas">            
+                <div class="BeetRoot"></div>
+                <div class="playerBlock">
+                    <div class="Player"></div>
+                </div>
+                <div class="ground"></div>
+                <div class="Scoreboard">
+                    <span class="Scoreboard-scoreText">Score: </span><br>
+                    <span class="Scoreboard-scoreText">Highscore: </span><br>
+                    <button class="Scoreboard-restart">
+                        <span class="Scoreboard-restartText">Restart</span>
+                    </button>
+                </div>
             </div>
         </div>
     </div>
+    
 
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->

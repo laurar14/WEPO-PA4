@@ -12,6 +12,21 @@ window.Controls = (function() {
         39: 'right',
         40: 'down'
     };
+    var audioPlayer = document.getElementById('audio');
+    var soundButton = document.getElementById('mute');
+    soundButton.addEventListener('click', function (e)
+    {
+        if (soundButton.getAttribute("data-text-swap") == soundButton.innerHTML) {
+            soundButton.innerHTML = soundButton.getAttribute("data-text-original");
+        }
+        else {
+            soundButton.setAttribute("data-text-original", soundButton.innerHTML);
+            soundButton.innerHTML = soundButton.getAttribute("data-text-swap");
+        }
+        e = e || window.event;
+        audio.muted = !audio.muted;
+        e.preventDefault();
+    }, false);
 
     /**
      * A singleton class which abstracts all player input,
