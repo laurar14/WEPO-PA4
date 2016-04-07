@@ -8,8 +8,14 @@ window.Game = (function() {
 	 * @constructor
 	 */
 	var Game = function(el) {
+		var self = this;
 		this.el = el;
+
+		this.player = new window.Player(this.el.find('.Player'), this);
+		this.beetroot = new window.BeetRoot(this.el.find('.BeetRoot'), self);
+
 		this.player = new window.Player(this.el.find('.playerBlock'), this);
+
 		this.isPlaying = false;
 
 		// Cache a bound onFrame since we need it each frame.
@@ -33,6 +39,7 @@ window.Game = (function() {
 
 		// Update game entities.
 		this.player.onFrame(delta);
+		this.beetroot.onFrame(delta);
 
 		//ADDED FOR NOW
 		this.el.css('animation', 'bgMove 10s linear infinite');
@@ -65,6 +72,7 @@ window.Game = (function() {
 	 */
 	Game.prototype.reset = function() {
 		this.player.reset();
+		this.beetroot.reset();
 	};
 
 	/**
