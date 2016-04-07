@@ -45,10 +45,11 @@ module.exports = function (grunt) {
             gruntfile: {
                 files: ['Gruntfile.js']
             },
-            compass: {
-                files: ['<%= config.app %>/styles/{,*/}*.{scss,sass}'],
+            /*compass: {
+                files: ['<%= config.app %>/styles/{,*/   /*<----  close comment before this is SUPPOSED TO BE HERE
+                }*.{scss,sass}'],
                 tasks: ['compass:server', 'autoprefixer']
-            },
+            },*/
             styles: {
                 files: ['<%= config.app %>/styles/{,*/}*.css'],
                 tasks: ['newer:copy:styles', 'autoprefixer']

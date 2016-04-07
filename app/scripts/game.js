@@ -40,11 +40,15 @@ window.Game = (function() {
 		this.player.onFrame(delta);
 		this.beetroot.onFrame(delta);
 		
-		if(this.player.started) {
+		if(this.player.started && this.isPlaying) {
+			document.getElementById('GameCanvasBackground').style.animation = "bgMove 20s linear infinite";
+			this.el.children('.ground').css('animation', 'bgMove 10s linear infinite');
 			this.el.css('animation', 'bgMove 10s linear infinite');
 		}
 		else {
+			document.getElementById('GameCanvasBackground').style.animation = "none";
 			this.el.css('animation', 'none');
+			this.el.children('.ground').css('animation', 'none');
 		}		
 		// Request next frame.
 
