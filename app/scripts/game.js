@@ -33,11 +33,6 @@ window.Game = (function() {
 
 		// Update game entities.
 		this.player.onFrame(delta);
-
-		//ADDED FOR NOW
-		this.el.css('animation', 'bgMove 10s linear infinite');
-		
-		/* COPIED OUT TO CHECK FOR TILING
 		if(this.player.started) {
 			this.el.css('animation', 'bgMove 10s linear infinite');
 		}
@@ -45,7 +40,7 @@ window.Game = (function() {
 			this.el.css('animation', 'none');
 		}		
 		// Request next frame.
-		window.requestAnimationFrame(this.onFrame);*/
+		window.requestAnimationFrame(this.onFrame);
 	};
 
 	/**
