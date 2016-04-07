@@ -2,11 +2,12 @@ body {
   background-color: black;
 }
 .Player {
-	position: absolute;
+  position: absolute;
   width: 15em;
   height: 12.3em;
-
-	background: url("../images/riding_dabs.png") no-repeat;
+  top: 0;
+  left: -20em;
+  background: url("../images/riding_dabs.png") no-repeat;
   animation: unicorn-fly .5s steps(2) infinite;
 }
 @keyframes unicorn-fly {
@@ -39,33 +40,33 @@ body {
 }
 */
 .Scoreboard {
-	position: absolute;
-	left: 50%;
-	top: 10em;
-	height: 30em;
-	width: 40em;
-	margin-left: -20em;
-	box-sizing: border-box;
-	background: purple;
-	text-align: center;
-	-webkit-transform: translate(0, -40em);
-	-webkit-transition: -webkit-transform 0.5s;
+  position: absolute;
+  left: 50%;
+  top: 10em;
+  height: 30em;
+  width: 40em;
+  margin-left: -20em;
+  box-sizing: border-box;
+  background: purple;
+  text-align: center;
+  -webkit-transform: translate(0, -40em);
+  -webkit-transition: -webkit-transform 0.5s;
 }
 
 /**
 * Reset transform to animate it into the correct spot on the screen.
 */
 .Scoreboard.is-visible {
-	-webkit-transform: none;
+  -webkit-transform: none;
 }
 
 .Scoreboard-restart {
-	margin-top: 15em;
-	font-size: inherit;
-	padding: 0.4em 1.5em;
-	border: 0.2em solid white;
-	background: none;
-	cursor: pointer;
+  margin-top: 15em;
+  font-size: inherit;
+  padding: 0.4em 1.5em;
+  border: 0.2em solid white;
+  background: none;
+  cursor: pointer;
 }
 .Scoreboard-restartText {
   font-family: 'Comic Sans MS', serif;
@@ -81,13 +82,8 @@ body {
 
 .GameCanvas {
   font-size: 10px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 102.4em;
-  height: 57.6em;
-  margin-left: -51.2em;
-  margin-top: -28.8em;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
   background: url("../images/clouds.png") repeat-x;
 }
@@ -130,13 +126,9 @@ body {
 
 #GameCanvasBackground {
   font-size: 10px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 102.4em;
+  position: relative;
+  width: 100%;
   height: 57.6em;
-  margin-left: -51.2em;
-  margin-top: -28.8em;
   overflow: hidden;
   background: url("../images/bg_stars.png") repeat;
 }
