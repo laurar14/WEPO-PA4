@@ -9,7 +9,7 @@ window.Game = (function() {
 	 */
 	var Game = function(el) {
 		this.el = el;
-		this.player = new window.Player(this.el.find('.Player'), this);
+		this.player = new window.Player(this.el.find('.playerBlock'), this);
 		this.isPlaying = false;
 
 		// Cache a bound onFrame since we need it each frame.
@@ -33,7 +33,12 @@ window.Game = (function() {
 
 		// Update game entities.
 		this.player.onFrame(delta);
-
+		if(this.player.started) {
+			this.el.css('animation', 'bgMove 10s linear infinite');
+		}
+		else {
+			this.el.css('animation', 'none');
+		}		
 		// Request next frame.
 		window.requestAnimationFrame(this.onFrame);
 	};
@@ -48,7 +53,6 @@ window.Game = (function() {
 		this.lastFrame = +new Date() / 1000;
 		window.requestAnimationFrame(this.onFrame);
 		this.isPlaying = true;
-		this.el.css('animation', 'bgMove 10s linear infinite');
 	};
 
 	/**
@@ -63,7 +67,6 @@ window.Game = (function() {
 	 */
 	Game.prototype.gameover = function() {
 		this.isPlaying = false;
-		this.el.css('animation', 'none');
 		// Should be refactored into a Scoreboard class.
 		//TODO
 		var that = this;
