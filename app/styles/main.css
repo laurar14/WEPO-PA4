@@ -19,8 +19,8 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 75%;
-  height: 75%;
+  width: 50%;
+  height: 50%;
   background-image: url("../images/beetroot.png");
   background-size: contain;
   background-repeat: no-repeat;
@@ -105,7 +105,7 @@ body {
 }
 */
 
- 
+
 @keyframes bgMove {
   from {background-position: 0 0;}
   to {background-position: -102.4em 0;}
@@ -136,7 +136,7 @@ body {
   margin-left: -51.2em;
   margin-top: -28.8em;
   overflow: hidden;
-  background: url("http://i.imgur.com/PhFQkdl.png");
+  background: url("../images/background.png");
   background-size: contain;
   background-repeat: tile;
   
