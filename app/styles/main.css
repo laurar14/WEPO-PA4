@@ -1,12 +1,9 @@
 body {
-background: black;
+  background-color: black;
 }
-
-
 .Player {
-	position: absolute;
-	top: 0;
-	left: 0;
+	position: relative;
+  z-index: -800;
   /*width: 5em;
   height: 5em;
 	width: 20em;
@@ -94,7 +91,7 @@ padding: 0.2em 0;
   margin-left: -51.2em;
   margin-top: -28.8em;
   overflow: hidden;
-  background: url("../images/clouds.png") repeat-x;
+  background: url("../images/clouds.png") 0 0 repeat-x;
 }
 
 /*
