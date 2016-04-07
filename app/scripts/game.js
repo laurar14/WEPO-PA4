@@ -88,10 +88,18 @@ window.Game = (function() {
 	 */
 	Game.prototype.gameover = function() {
 		this.isPlaying = false;
+
 		// Should be refactored into a Scoreboard class.
 		//TODO
 		var that = this;
-		console.log(this);
+		
+		if(that.player.score > highscore) {
+			highscore = that.player.score;
+		}
+		console.log(highscore);
+
+		document.getElementById("highscore").innerHTML = highscore;
+
 		var scoreboardEl = this.el.find('.Scoreboard');
 		scoreboardEl
 			.addClass('is-visible')

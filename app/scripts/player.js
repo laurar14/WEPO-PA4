@@ -78,13 +78,16 @@ window.Player = (function() {
 			audioExtra.loop = false;
 			audioExtra.play();
 
+			document.getElementById("score").innerHTML = this.score;
+
 			return this.game.gameover();
 		} else {
 			audioExtra.src = "../sounds/gallop.wav";
 			audioExtra.play();
 			audioExtra.loop = true;
 
-			if(this.pos.x >= first && this.pos.x <= second) {
+			//if you are past half way over the beet you get +1 score
+			if(this.pos.x >= beetX && this.pos.x <= second) {
 				if(!raised) {
 					this.score++;
 				}
