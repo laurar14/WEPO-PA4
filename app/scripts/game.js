@@ -3,6 +3,8 @@ window.Game = (function() {
 	'use strict';
 
 	var audio = document.getElementById("audio");
+	var highscore = 0;
+
 	/**
 	 * Main game class.
 	 * @param {Element} el jQuery element containing the game.
@@ -68,6 +70,7 @@ window.Game = (function() {
 		window.requestAnimationFrame(this.onFrame);
 		this.isPlaying = true;
 
+		//audio.src = "../sounds/circus_8bit.wav";
 		audio.src = "../sounds/circus_8bit.wav";
 		audio.loop = true;
 	};
