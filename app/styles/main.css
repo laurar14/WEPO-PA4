@@ -115,7 +115,7 @@ padding: 0.2em 0;
 }
 */
 
- 
+
 @keyframes bgMove {
   from {background-position: 0 0;}
   to {background-position: -102.4em 0;}
@@ -131,7 +131,7 @@ padding: 0.2em 0;
   margin-left: -51.2em;
   margin-top: -28.8em;
   overflow: hidden;
-  background: url("http://i.imgur.com/PhFQkdl.png");
+  background: url("../images/background.png");
   background-size: contain;
   background-repeat: tile;
   
