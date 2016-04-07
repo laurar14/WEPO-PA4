@@ -1,4 +1,6 @@
-
+body {
+  background-color: black;
+}
 .Player {
 	position: relative;
   z-index: -800;
@@ -13,10 +15,24 @@
   animation: unicorn-fly .5s steps(2) infinite;
 }
 
+
+.BeetRoot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 75%;
+  height: 75%;
+  background-image: url("../images/beetroot.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+
+}
+
 @keyframes unicorn-fly {
     from { background-position:  0px; }
     to { background-position:  -300px; }
   }
+
 
 .Scoreboard {
 	position: absolute;
@@ -116,7 +132,7 @@ padding: 0.2em 0;
   background-size: contain;
   background-repeat: tile;
   
-  animation: backgroundScroll 20s linear infinite;
+  animation: bgMove 20s linear infinite;
 }
 
 .LANIMATION {
