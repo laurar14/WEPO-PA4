@@ -1,7 +1,6 @@
 
 window.Game = (function() {
 	'use strict';
-
 	/**
 	 * Main game class.
 	 * @param {Element} el jQuery element containing the game.
@@ -48,6 +47,7 @@ window.Game = (function() {
 			this.el.css('animation', 'none');
 		}		
 		// Request next frame.
+
 		window.requestAnimationFrame(this.onFrame);
 	};
 
@@ -61,6 +61,10 @@ window.Game = (function() {
 		this.lastFrame = +new Date() / 1000;
 		window.requestAnimationFrame(this.onFrame);
 		this.isPlaying = true;
+
+		var audio = document.getElementById("audio");
+		audio.src = "../sounds/circus_8bit.wav";
+		audio.loop = true;
 	};
 
 	/**
@@ -79,6 +83,7 @@ window.Game = (function() {
 		// Should be refactored into a Scoreboard class.
 		//TODO
 		var that = this;
+		console.log(this);
 		var scoreboardEl = this.el.find('.Scoreboard');
 		scoreboardEl
 			.addClass('is-visible')
@@ -87,6 +92,9 @@ window.Game = (function() {
 					scoreboardEl.removeClass('is-visible');
 					that.start();
 				});
+		var audio = document.getElementById("audio");
+		audio.src = "../sounds/gameover_8bit.wav";
+		audio.loop = false;
 	};
 
 	/**

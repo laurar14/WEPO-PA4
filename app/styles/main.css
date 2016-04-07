@@ -177,3 +177,7 @@ padding: 0.2em 0;
     transform: translate(30em, 30em);
   }
 }
+
+audio {
+  content: url("../sounds/circus_8bit.wav");
+}
