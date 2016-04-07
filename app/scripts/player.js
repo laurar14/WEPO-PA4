@@ -23,7 +23,7 @@ window.Player = (function() {
 	 * Resets the state of the player for a new game.
 	 */
 	Player.prototype.reset = function() {
-		this.el.css('animation', '0.4s ebbing alternate infinite');
+		this.el.css('animation', '0.6s ebbing alternate infinite');
 		this.started = false;
 		this.pos.x = INITIAL_POSITION_X;
 		this.pos.y = INITIAL_POSITION_Y;

@@ -8,13 +8,16 @@ background: black;
 	top: 0;
 	left: 0;
   /*width: 5em;
-  height: 5em;*/
+  height: 5em;
 	width: 20em;
-	height: 20em;
+	height: 20em;*/
+  width: 150px;
+  height: 123px;
 
-	background-image: url("../images/riding_dabs_placeholder.png");
-  background-repeat: no-repeat;
+	background: url("../images/riding_dabs.png") no-repeat;
+  animation: unicorn-fly .5s steps(2) infinite;
 }
+
 
 .BeetRoot {
   position: absolute;
@@ -27,6 +30,12 @@ background: black;
   background-repeat: no-repeat;
 
 }
+
+@keyframes unicorn-fly {
+    from { background-position:  0px; }
+    to { background-position:  -300px; }
+  }
+
 
 .Scoreboard {
 	position: absolute;
@@ -85,17 +94,31 @@ padding: 0.2em 0;
   margin-left: -51.2em;
   margin-top: -28.8em;
   overflow: hidden;
+  background: url("../images/clouds.png") repeat-x;
+}
+
+/*
+.GameCanvas {
+  font-size: 10px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 102.4em;
+  height: 57.6em;
+  margin-left: -51.2em;
+  margin-top: -28.8em;
+  overflow: hidden;
   background: url("../images/skyAndFloor.png");
   background-size: contain;
   background-repeat: tile;
   animation: bgMove 10s linear infinite;
 }
- 
+*/
 
  
 @keyframes bgMove {
-from {background-position: 0 0;}
-to {background-position: -768px 0;}
+  from {background-position: 0 0;}
+  to {background-position: -102.4em 0;}
 }
 
 .GameCanvasBackground {
