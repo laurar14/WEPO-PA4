@@ -13,11 +13,15 @@ window.Game = (function() {
 	var Game = function(el) {
 		var self = this;
 		this.el = el;
+		this.level = 0;
 		this.beetroot = new window.BeetRoot(this.el.find('.BeetRoot'), self);
 		this.player = new window.Player(this.el.find('.playerBlock'), this);
 		this.isPlaying = false;
 		// Cache a bound onFrame since we need it each frame.
 		this.onFrame = this.onFrame.bind(this);
+		
+		
+
 	};
 
 	/**
@@ -32,7 +36,7 @@ window.Game = (function() {
 
 		// Calculate how long since last frame in seconds.
 		var now = +new Date() / 1000,
-				delta = now - this.lastFrame;
+		delta = now - this.lastFrame;
 		this.lastFrame = now;
 
 		// Update game entities.
@@ -40,6 +44,9 @@ window.Game = (function() {
 		this.beetroot.onFrame(delta);
 		
 		if(this.player.started && this.isPlaying) {
+			var lvls = this.el.find('.Levels');
+			lvls.removeClass('is-visible');
+
 			document.getElementById('GameCanvasBackground').style.animation ='bgMove 70s linear infinite';
 			this.el.children('.ground').css('animation', 'bgMove 10s linear infinite');
 			this.el.css('animation', 'bgMove 10s linear infinite');
@@ -57,7 +64,10 @@ window.Game = (function() {
 	/**
 	 * Starts a new game.
 	 */
-	Game.prototype.start = function() {
+	Game.prototype.start = function(x) {
+		if(x !== undefined){
+			this.level = x;
+		}
 		this.reset();
 
 		// Restart the onFrame loop
@@ -73,9 +83,9 @@ window.Game = (function() {
 	/**
 	 * Resets the state of the game so a new game can be started.
 	 */
-	Game.prototype.reset = function() {
-		this.player.reset();
-		this.beetroot.reset();
+	Game.prototype.reset = function(x) {
+		this.player.reset(this.level);
+		this.beetroot.reset(this.level);
 	};
 
 	/**

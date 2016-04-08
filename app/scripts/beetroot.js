@@ -21,10 +21,12 @@ window.BeetRoot = (function() {
 	/**
 	 * Resets the state of the player for a new game.
 	 */
-	BeetRoot.prototype.reset = function() {
+	BeetRoot.prototype.reset = function(x) {
 		this.started = false;
 		this.pos.x = INITIAL_POSITION_X;
 		this.pos.y = INITIAL_POSITION_Y;
+		this.level = x;
+		this.el.css('display', 'block');
 
 	};
 //	this.el.css('animation', '0.4s ebbing alternate infinite');
@@ -38,7 +40,7 @@ window.BeetRoot = (function() {
 		}
 
 		else if(self.started){
-			self.pos.x -= delta * SPEED;
+			self.pos.x -= delta * (SPEED + this.level);
 			if(self.pos.x <= -30){
 				self.pos.x = 120;
 				var newY = Math.round(Math.random() * (7 - 1) + 1);
