@@ -19,6 +19,7 @@ window.Player = (function() {
 		this.game = game;
 		this.pos = { x: 0, y: 0 };
 		this.score = 0;
+		this.starSound = new Audio("../sounds/star.wav");
 
 	};
 
@@ -44,11 +45,13 @@ window.Player = (function() {
 			self.started = true;
 			self.pos.y -= delta * SPEED;
 			this.el.css('animation', 'none');
+			this.starSound.currentTime = 0;
+			this.starSound.play();
 		}
 
 		else if(self.started){
 			self.pos.y += delta * SPEED;
-		} 
+		}
 
 		if(Controls.keys.up){
 			console.log(this.game.beetroot.pos.x);
