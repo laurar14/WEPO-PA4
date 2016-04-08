@@ -1,5 +1,6 @@
 body {
   background-color: black;
+  height: 100%;
 }
 .Player {
   position: absolute;
@@ -20,8 +21,8 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 25.6em;
-  height: 40em;
+  width: 25em;
+  height: 39.1em;
   max-width: 75%;
   max-height: 75%;
   background: url("../images/beetroot.png") no-repeat;
@@ -167,5 +168,36 @@ body {
   to {
     transform: rotateX(180deg);
     transform: translate(30em, 30em);
+  }
+}
+
+@media screen and (max-height: 568px) {
+  #GameCanvasBackground {
+       height: 51.2em;
+  }
+  .ground {
+    margin-top: 45.3em;
+    width: 100%;
+    height: 6.3em;
+    background: url("../images/ground_256.png") repeat-x;
+  }
+  .BeetRoot {
+    position: absolute;
+    top: 0;
+    left: -22em;
+    width: 23em;
+    height: 34.4em;
+    background: url("../images/beetroot.png") no-repeat;
+    background-size: 21em 34.4em;
+  }
+
+  .Player {
+    position: absolute;
+    width: 15em;
+    height: 12.3em;
+    top: 0;
+    left: -25em;
+    background: url("../images/riding_dabs.png") no-repeat;
+    animation: unicorn-fly .5s steps(2) infinite;
   }
 }
