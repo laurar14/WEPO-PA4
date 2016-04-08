@@ -79,7 +79,7 @@ window.Player = (function() {
 			audioExtra.play();
 			audioExtra.loop = true;
 			//if you are past half way over the beet you get +1 score
-			if(beetX < 22 && beetX > -10) {
+			if(beetX < -10 && beetX > -15) {
 				if(!raised) {
 					this.score++;
 				}
