@@ -48,6 +48,10 @@ window.Player = (function() {
 
 		else if(self.started){
 			self.pos.y += delta * SPEED;
+		} 
+
+		if(Controls.keys.up){
+			console.log(this.game.beetroot.pos.x);
 		}
 		this.checkCollisionWithBounds();
 
@@ -74,6 +78,8 @@ window.Player = (function() {
 			audioExtra.loop = false;
 			audioExtra.play();
 
+			document.getElementById('score').innerHTML = this.score;
+
 			return this.game.gameover();
 		} else {
 			audioExtra.play();
@@ -88,9 +94,10 @@ window.Player = (function() {
 			} else {
 				raised = false;
 			}
+
 		}
 
-		document.getElementById('score').innerHTML = this.score;
+		document.getElementById('onScreenScore').innerHTML = this.score;
 	};
 
 	return Player;

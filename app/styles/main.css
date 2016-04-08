@@ -173,9 +173,8 @@ body {
   }
 }
 
-.onScreenScore {
+#onScreenScore {
   color: purple;
-  float: right;
   font-family: 'Courier New', monospace;
   font-size: 4em;
   font-weight: 900;
@@ -237,4 +236,3 @@ body {
     border-radius: 25px;
   }
 }
-
