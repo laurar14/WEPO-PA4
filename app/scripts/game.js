@@ -13,7 +13,6 @@ window.Game = (function() {
 	var Game = function(el) {
 		var self = this;
 		this.el = el;
-
 		this.beetroot = new window.BeetRoot(this.el.find('.BeetRoot'), self);
 		this.player = new window.Player(this.el.find('.playerBlock'), this);
 		this.isPlaying = false;
