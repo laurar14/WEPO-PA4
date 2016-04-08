@@ -5,7 +5,6 @@ window.BeetRoot = (function() {
 
 	// All these constants are in em's, multiply by 10 pixels
 	// for 1024x576px canvas.
-
 	var SPEED = 25.6; // * 10 pixels per second
 	var WIDTH = 40;
 	var HEIGHT = 50;
@@ -37,7 +36,6 @@ window.BeetRoot = (function() {
 		if(Controls.keys.space && self.started === false) {
 			self.started = true;
 		}
-
 
 		else if(self.started){
 			self.pos.x -= delta * SPEED;
