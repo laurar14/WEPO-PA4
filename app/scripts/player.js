@@ -87,7 +87,13 @@ window.Player = (function() {
 			//if you are past half way over the beet you get +1 score
 			if(beetX < -10 && beetX > -15) {
 				if(!raised) {
-					this.score++;
+					if(SPEED === 30) {
+						this.score++;
+					} else if(SPEED === 60) {
+						this.score += 2;
+					} else if(SPEED === 90) {
+						this.score += 3;
+					}
 				}
 				raised = true;
 			} else {
