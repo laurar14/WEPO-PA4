@@ -5,8 +5,9 @@ $(function() {
 	'use strict';
 
 		var game 		= new window.Game($('.GameCanvas'));
-		var levels 		= game.el.find('.Levels');
+		var levels 		= game.el.find('.Scoreboard');
 		var beetRoot 	= game.el.find('.BeetRoot');
+		
 		levels.addClass('is-visible');
 
 		levels.addClass('is-visible').find('.Levels-button-easy').one('click', function() {

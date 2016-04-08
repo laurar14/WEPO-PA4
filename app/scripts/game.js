@@ -100,8 +100,8 @@ window.Game = (function() {
 		}
 
 		document.getElementById('highscore').innerHTML = highscore;
+		var scoreboardEl 	= this.el.find('.Scoreboard');
 
-		var scoreboardEl = this.el.find('.Scoreboard');
 		scoreboardEl
 			.addClass('is-visible')
 			.find('.Scoreboard-restart')
@@ -109,7 +109,6 @@ window.Game = (function() {
 					scoreboardEl.removeClass('is-visible');
 					that.start();
 				});
-
 		audio.src 	= '../sounds/gameover_8bit.wav';
 		audio.loop 	= false;
 	};

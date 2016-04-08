@@ -1,38 +1,24 @@
-.Levels {
-   position: absolute;
-   left: 50%;
-   top: 25%;
-   height: 12em;
-   width: 35em;
-   margin-left: -20em;
-   box-sizing: border-box;
-   background: pink;
-   text-align: center;
-   -webkit-transform: translate(0, -40em);
-   -webkit-transition: -webkit-transform 0.5s;
-   opacity: 0.95;
-   border-radius: 25px;
-   border: 0.2em solid black;
-}
-
 .Levels-button-easy ,.Levels-button-medium , .Levels-button-hard {
    font-size: inherit;
    padding: 0.4em 1.5em;
    margin-top: 3em;
-   border: 0.2em solid black;
-   background: pink;
+   border: 0.2em solid white;
+   background: transparent;
    cursor: pointer;
-   -moz-box-shadow: 0px 0px 100px #ff99cc;
+   border-radius: 25px;
+}
+
+.Levels-button-easy:hover, .Levels-button-medium:hover, .Levels-button-hard:hover {
+     -moz-box-shadow: 0px 0px 100px #ff99cc;
    -webkit-box-shadow: 0px 0px 100px #ff99cc;
    box-shadow: 0px 0px 100px #ff99cc;
-   border-radius: 25px;
 }
 
 .Levels-levelsText {
    font-family: 'Courier New', monospace;
    font-size: 2.4em;
    font-weight: 900;
-   color: black;
+   color: white;
 }
 
 .Levels.is-visible {
@@ -105,26 +91,6 @@ footer a:hover, footer a:focus {
 */
 .Scoreboard.is-visible {
    -webkit-transform: none;
-}
-
-.Scoreboard-restart {
-   font-size: inherit;
-   padding: 0.4em 1.5em;
-   margin-top: 3em;
-   border: 0.2em solid white;
-   background: none;
-   cursor: pointer;
-   -moz-box-shadow: 0px 0px 100px #ff99cc;
-   -webkit-box-shadow: 0px 0px 100px #ff99cc;
-   box-shadow: 0px 0px 100px #ff99cc;
-   border-radius: 25px;
-}
-
-.Scoreboard-restartText {
-   font-family: 'Courier New', monospace;
-   font-size: 2.4em;
-   font-weight: 900;
-   color: white;
 }
 
 .Scoreboard-scoreText {
@@ -220,10 +186,6 @@ footer a:hover, footer a:focus {
       left: 21.6em;
       height: 25em;
       width: 25em;
-   }
-
-   .Scoreboard-restart {
-      margin-top: 1em;
    }
 }
 
