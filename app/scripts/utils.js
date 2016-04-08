@@ -11,6 +11,6 @@ if (!window.requestAnimationFrame) {
             window.msRequestAnimationFrame ||
             function(/* function */ callback) {
             window.setTimeout(callback, 1000 / 60);
-            };
+        };
     })();
 }

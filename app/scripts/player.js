@@ -1,79 +1,75 @@
 window.Player = (function() {
 	'use strict';
 
-	var Controls 	= window.Controls;
-	var audioExtra 	= document.getElementById('audioExtra');
+	var Controls	= window.Controls;
+	var audioExtra	= document.getElementById('audioExtra');
 
 	// All these constants are in em's, multiply by 10 pixels
 	// for 1024x576px canvas.
-	var SPEED 				= 30; // * 10 pixels per second
-	var WIDTH 				= 5;
-	var HEIGHT 				= 5;
-	var INITIAL_POSITION_X 	= 30;
-	var INITIAL_POSITION_Y 	= 25;
+	var SPEED				= 30; // * 10 pixels per second
+	var HEIGHT				= 5;
+	var INITIAL_POSITION_X	= 30;
+	var INITIAL_POSITION_Y	= 25;
 
-	var raised 		= false;
-	var movedUpLast = false;
+	var raised		= false;
+	var movedUpLast	= false;
 
 	var Player = function(el, game) {
-		this.el 		= el;
-		this.game 		= game;
-		this.pos 		= { x: 0, y: 0 };
-		this.score 		= 0;
-		this.starSound 	= document.getElementById('flappingAudio');
+		this.el			= el;
+		this.game		= game;
+		this.pos		= { x: 0, y: 0 };
+		this.score		= 0;
+		this.starSound	= document.getElementById('flappingAudio');
 	};
 
 	/**
 	 * Resets the state of the player for a new game.
 	 */
 	Player.prototype.reset = function(level) {
-		audioExtra.src = '../sounds/gallop.wav';
+		audioExtra.src	= '../sounds/gallop.wav';
+		this.started	= false;
+		this.pos.x		= INITIAL_POSITION_X;
+		this.pos.y		= INITIAL_POSITION_Y;
+		this.score		= 0;
+		SPEED			= level;
 		this.el.css('animation', '0.6s ebbing alternate infinite');
-		this.started 	= false;
-		this.pos.x 		= INITIAL_POSITION_X;
-		this.pos.y 		= INITIAL_POSITION_Y;
-		this.score 		= 0;
-		SPEED 			= level;
 	};
 
 	Player.prototype.onFrame = function(delta) {
 		var self = this;
-		// TODO FIX SO ACTS LIKE SPACE BAR
+
 		if(Controls.keys.space) {
 			self.started = true;
-			self.pos.y 	-= delta * (SPEED);
+			self.pos.y	-= delta * SPEED;
+
 			this.el.css('animation', 'none');
 
 			if(!movedUpLast) {
 				this.starSound.currentTime = 0;
-			this.starSound.play();
+				this.starSound.play();
 			}
 
 			movedUpLast = true;
 		} else if(self.started) {
-			self.pos.y += delta * (SPEED);
+			self.pos.y += delta * SPEED;
 			movedUpLast = false;
 		}
 
 		this.checkCollisionWithBounds();
-
-		// Update UI
 		this.el.css('transform', 'translate(' + this.pos.x + 'em, ' + this.pos.y + 'em)');
 	};
 
 	Player.prototype.checkCollisionWithBounds = function() {
-		// CHECK COLLISSION WITH PIPES AND GROUND
-		// Pipes, ground, ceiling
-		var beetroot 	= (this.game.beetroot);
-		var beetX 		= beetroot.pos.x;
+		var beetroot	= (this.game.beetroot);
+		var beetX		= beetroot.pos.x;
 
 		if(
 			this.pos.y < 0 ||
 			this.pos.y + HEIGHT > this.game.WORLD_HEIGHT ||
 			(beetX < 22 && beetX > -10 && this.pos.y >= beetroot.pos.y-5)
 			) {
-			audioExtra.src 	= '../sounds/neigh.wav';
-			audioExtra.loop = false;
+			audioExtra.src	= '../sounds/neigh.wav';
+			audioExtra.loop	= false;
 			audioExtra.play();
 			document.getElementById('score').innerHTML = this.score;
 

@@ -13,20 +13,20 @@ window.Controls = (function() {
         40: 'down'
     };
 
-    var audioPlayer         = document.getElementById('audio');
+    var audioPlayer   = document.getElementById('audio');
     var audioPlayerExtra    = document.getElementById('audioExtra');
-    var flappingAudio       = document.getElementById('flappingAudio');
-    var soundButton         = document.getElementById('mute');
+    var flappingAudio      = document.getElementById('flappingAudio');
+    var soundButton   = document.getElementById('mute');
     var text                = soundButton.lastChild;
 
     soundButton.addEventListener('click', function (e) {
         $('#iconSpan').toggleClass('glyphicon-volume-up glyphicon-volume-off');
-        text.data = text.data == " Music Off" ? " Music On" : " Music Off";
+        text.data = text.data === ' Music Off' ? ' Music On' : ' Music Off';
         e = e || window.event;
 
-        audioPlayer.muted       = !audioPlayer.muted;
+        audioPlayer.muted      = !audioPlayer.muted;
         audioPlayerExtra.muted  = !audioPlayerExtra.muted;
-        flappingAudio.muted     = !flappingAudio.muted;
+        flappingAudio.muted  = !flappingAudio.muted;
         e.preventDefault();
     }, false);
 
@@ -38,7 +38,7 @@ window.Controls = (function() {
      */
     var Controls = function() {
         this._didJump   = false;
-        this.keys       = {};
+        this.keys      = {};
         $(window)
             .on('keydown', this._onKeyDown.bind(this))
             .on('keyup', this._onKeyUp.bind(this));
@@ -52,7 +52,7 @@ window.Controls = (function() {
 
         // Remember that this button is down.
         if (e.keyCode in KEYS) {
-            var keyName         = KEYS[e.keyCode];
+            var keyName   = KEYS[e.keyCode];
             this.keys[keyName]  = true;
             return false;
         }
@@ -60,7 +60,7 @@ window.Controls = (function() {
 
     Controls.prototype._onKeyUp = function(e) {
         if (e.keyCode in KEYS) {
-            var keyName         = KEYS[e.keyCode];
+            var keyName   = KEYS[e.keyCode];
             this.keys[keyName]  = false;
             return false;
         }
@@ -70,7 +70,7 @@ window.Controls = (function() {
      * Only answers true once until a key is pressed again.
      */
     Controls.prototype.didJump = function() {
-        var answer      = this._didJump;
+        var answer    = this._didJump;
         this._didJump   = false;
         return answer;
     };

@@ -1,8 +1,8 @@
 window.Game = (function() {
 	'use strict';
 
-	var audio 		= document.getElementById('audio');
-	var highscore 	= 0;
+	var audio		= document.getElementById('audio');
+	var highscore	= 0;
 
 	/**
 	 * Main game class.
@@ -10,14 +10,14 @@ window.Game = (function() {
 	 * @constructor
 	 */
 	var Game = function(el) {
-		var self 		= this;
-		this.el 		= el;
-		this.level 		= 30;
-		this.beetroot 	= new window.BeetRoot(this.el.find('.BeetRoot'), self);
-		this.player 	= new window.Player(this.el.find('.playerBlock'), this);
-		this.isPlaying 	= false;
+		var self		= this;
+		this.el		= el;
+		this.level		= 30;
+		this.beetroot	= new window.BeetRoot(this.el.find('.BeetRoot'), self);
+		this.player	= new window.Player(this.el.find('.playerBlock'), this);
+		this.isPlaying	= false;
 		// Cache a bound onFrame since we need it each frame.
-		this.onFrame 	= this.onFrame.bind(this);
+		this.onFrame	= this.onFrame.bind(this);
 	};
 
 	/**
@@ -32,17 +32,14 @@ window.Game = (function() {
 
 		// Calculate how long since last frame in seconds.
 		var now = +new Date() / 1000,
-		delta 			= now - this.lastFrame;
-		this.lastFrame 	= now;
+		delta			= now - this.lastFrame;
+		this.lastFrame	= now;
 
 		// Update game entities.
 		this.player.onFrame(delta);
 		this.beetroot.onFrame(delta);
 		
 		if(this.player.started && this.isPlaying) {
-			
-			document.getElementById('GameCanvasBackground').style.animation ='bgMove 20s linear infinite';
-
 			document.getElementById('GameCanvasBackground').style.animation ='bgMove 70s linear infinite';
 
 			this.el.children('.ground').css('animation', 'bgMove 10s linear infinite');
@@ -100,7 +97,7 @@ window.Game = (function() {
 		}
 
 		document.getElementById('highscore').innerHTML = highscore;
-		var scoreboardEl 	= this.el.find('.Scoreboard');
+		var scoreboardEl	= this.el.find('.Scoreboard');
 		scoreboardEl.addClass('is-visible');
 
 		scoreboardEl.find('.Levels-button-easy').one('click', function() {
@@ -117,14 +114,14 @@ window.Game = (function() {
 			that.start(90);
 		});
 
-		audio.src 	= '../sounds/gameover_8bit.wav';
-		audio.loop 	= false;
+		audio.src	= '../sounds/gameover_8bit.wav';
+		audio.loop	= false;
 	};
 
 	/**
 	 * Some shared constants.
 	 */
-	Game.prototype.WORLD_WIDTH 	= 102.4;
+	Game.prototype.WORLD_WIDTH	= 102.4;
 	Game.prototype.WORLD_HEIGHT = 57.6;
 
 	return Game;
