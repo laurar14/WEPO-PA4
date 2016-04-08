@@ -25,6 +25,7 @@ body {
   background-position: right top;
   background-attachment: fixed;
   background-repeat: repeat-x;
+  overflow: hidden;
 }
 
 footer {
