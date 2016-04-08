@@ -20,7 +20,7 @@ window.Player = (function() {
 		this.game 		= game;
 		this.pos 		= { x: 0, y: 0 };
 		this.score 		= 0;
-		this.starSound 	= new Audio("../sounds/star.wav");
+		this.starSound 	= document.getElementById('flappingAudio');
 	};
 
 	/**
