@@ -26,20 +26,10 @@ body {
   max-width: 75%;
   max-height: 75%;
   background: url("../images/beetroot.png") no-repeat;
+  display: none;
 }
-/*
-.BeetRoot {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 75%;
-  height: 75%;
-  background-image: url("../images/beetroot.png");
-  background-size: contain;
-  background-repeat: no-repeat;
 
-}
-*/
+
 .Scoreboard {
   position: absolute;
   left: 50%;
@@ -235,4 +225,50 @@ body {
     box-shadow: 0px 0px 100px #ff99cc;
     border-radius: 25px;
   }
+}
+
+
+.Levels {
+  position: absolute;
+  /*left: 21.6em;
+  top: 10em;*/
+  left:50%;
+  top:25%;
+  height: 12em;
+  width: 35em;
+  margin-left: -20em;
+  box-sizing: border-box;
+  background: pink;
+  text-align: center;
+  -webkit-transform: translate(0, -40em);
+  -webkit-transition: -webkit-transform 0.5s;
+  opacity: 0.95;
+  border-radius: 25px;
+  border: 0.2em solid black;
+}
+
+/**
+* Reset transform to animate it into the correct spot on the screen.
+*/
+.Levels.is-visible {
+  -webkit-transform: none;
+}
+
+.Levels-button-easy ,.Levels-button-medium , .Levels-button-hard{
+  font-size: inherit;
+  padding: 0.4em 1.5em;
+  margin-top: 3em;
+  border: 0.2em solid black;
+  background: pink;
+  cursor: pointer;
+  -moz-box-shadow: 0px 0px 100px #ff99cc;
+  -webkit-box-shadow: 0px 0px 100px #ff99cc;
+  box-shadow: 0px 0px 100px #ff99cc;
+  border-radius: 25px;
+  }
+.Levels-levelsText {
+  font-family: 'Courier New', monospace;
+  font-size: 2.4em;
+  font-weight: 900;
+  color: black;
 }

@@ -20,19 +20,19 @@ window.Player = (function() {
 		this.pos = { x: 0, y: 0 };
 		this.score = 0;
 		this.starSound = new Audio("../sounds/star.wav");
-
 	};
 
 	/**
 	 * Resets the state of the player for a new game.
 	 */
-	Player.prototype.reset = function() {
+	Player.prototype.reset = function(x) {
 		audioExtra.src = '../sounds/gallop.wav';
 		this.el.css('animation', '0.6s ebbing alternate infinite');
 		this.started = false;
 		this.pos.x = INITIAL_POSITION_X;
 		this.pos.y = INITIAL_POSITION_Y;
 		this.score = 0;
+		this.level = x;
 
 	};
 //	this.el.css('animation', '0.4s ebbing alternate infinite');
@@ -43,14 +43,16 @@ window.Player = (function() {
 
 		if(Controls.keys.space) {
 			self.started = true;
-			self.pos.y -= delta * SPEED;
+			self.pos.y -= delta * (SPEED+self.level);
 			this.el.css('animation', 'none');
 			this.starSound.currentTime = 0;
 			this.starSound.play();
+
+			console.log(self.game.level);
 		}
 
 		else if(self.started){
-			self.pos.y += delta * SPEED;
+			self.pos.y += delta * (SPEED+self.level);
 		}
 
 		if(Controls.keys.up){
