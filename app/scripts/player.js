@@ -81,6 +81,8 @@ window.Player = (function() {
 			audioExtra.loop = false;
 			audioExtra.play();
 
+			document.getElementById('score').innerHTML = this.score;
+
 			return this.game.gameover();
 		} else {
 			audioExtra.play();
@@ -98,7 +100,7 @@ window.Player = (function() {
 
 		}
 
-		document.getElementById('score').innerHTML = this.score;
+		document.getElementById('onScreenScore').innerHTML = this.score;
 	};
 
 	return Player;
