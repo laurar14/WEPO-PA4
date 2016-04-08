@@ -16,15 +16,15 @@ window.Controls = (function() {
     var soundButton = document.getElementById('mute');
     soundButton.addEventListener('click', function (e)
     {
-        if (soundButton.getAttribute("data-text-swap") == soundButton.innerHTML) {
-            soundButton.innerHTML = soundButton.getAttribute("data-text-original");
+        if (soundButton.getAttribute('data-text-swap') === soundButton.innerHTML) {
+            soundButton.innerHTML = soundButton.getAttribute('data-text-original');
         }
         else {
-            soundButton.setAttribute("data-text-original", soundButton.innerHTML);
-            soundButton.innerHTML = soundButton.getAttribute("data-text-swap");
+            soundButton.setAttribute('data-text-original', soundButton.innerHTML);
+            soundButton.innerHTML = soundButton.getAttribute('data-text-swap');
         }
         e = e || window.event;
-        audio.muted = !audio.muted;
+        audioPlayer.muted = !audioPlayer.muted;
         e.preventDefault();
     }, false);
 

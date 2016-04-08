@@ -12,10 +12,8 @@ window.BeetRoot = (function() {
 	var INITIAL_POSITION_Y = 25;
 
 	var BeetRoot = function(el, game) {
-		console.log("HERE");
 		this.el = el;
 		this.game = game;
-		console.log(this.game);
 		this.pos = { x: 0, y: 0 };
 
 	};
@@ -35,7 +33,7 @@ window.BeetRoot = (function() {
 		var self = this;
 		// TODO FIX SO ACTS LIKE SPACE BAR
 
-		if(Controls.keys.space && self.started == false) {
+		if(Controls.keys.space && self.started === false) {
 			self.started = true;
 		}
 

@@ -2,7 +2,7 @@
 window.Game = (function() {
 	'use strict';
 
-	var audio = document.getElementById("audio");
+	var audio = document.getElementById('audio');
 	var highscore = 0;
 
 	/**
@@ -16,11 +16,8 @@ window.Game = (function() {
 
 		this.player = new window.Player(this.el.find('.Player'), this);
 		this.beetroot = new window.BeetRoot(this.el.find('.BeetRoot'), self);
-
 		this.player = new window.Player(this.el.find('.playerBlock'), this);
-
 		this.isPlaying = false;
-
 		// Cache a bound onFrame since we need it each frame.
 		this.onFrame = this.onFrame.bind(this);
 	};
@@ -45,15 +42,15 @@ window.Game = (function() {
 		this.beetroot.onFrame(delta);
 		
 		if(this.player.started && this.isPlaying) {
-			document.getElementById('GameCanvasBackground').style.animation = "bgMove 20s linear infinite";
+			document.getElementById('GameCanvasBackground').style.animation ='bgMove 20s linear infinite';
 			this.el.children('.ground').css('animation', 'bgMove 10s linear infinite');
 			this.el.css('animation', 'bgMove 10s linear infinite');
 		}
 		else {
-			document.getElementById('GameCanvasBackground').style.animation = "none";
+			document.getElementById('GameCanvasBackground').style.animation = 'none';
 			this.el.css('animation', 'none');
 			this.el.children('.ground').css('animation', 'none');
-		}		
+		}
 		// Request next frame.
 
 		window.requestAnimationFrame(this.onFrame);
@@ -70,8 +67,8 @@ window.Game = (function() {
 		window.requestAnimationFrame(this.onFrame);
 		this.isPlaying = true;
 
-		//audio.src = "../sounds/circus_8bit.wav";
-		audio.src = "../sounds/circus_8bit.wav";
+		//audio.src = '../sounds/circus_8bit.wav';
+		audio.src = '../sounds/circus_8bit.wav';
 		audio.loop = true;
 	};
 
@@ -96,9 +93,8 @@ window.Game = (function() {
 		if(that.player.score > highscore) {
 			highscore = that.player.score;
 		}
-		console.log(highscore);
 
-		document.getElementById("highscore").innerHTML = highscore;
+		document.getElementById('highscore').innerHTML = highscore;
 
 		var scoreboardEl = this.el.find('.Scoreboard');
 		scoreboardEl
@@ -109,7 +105,7 @@ window.Game = (function() {
 					that.start();
 				});
 
-		audio.src = "../sounds/gameover_8bit.wav";
+		audio.src = '../sounds/gameover_8bit.wav';
 		audio.loop = false;
 	};
 

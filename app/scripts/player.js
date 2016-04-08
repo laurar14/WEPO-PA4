@@ -2,7 +2,7 @@ window.Player = (function() {
 	'use strict';
 
 	var Controls = window.Controls;
-	var audioExtra = document.getElementById("audioExtra");
+	var audioExtra = document.getElementById('audioExtra');
 
 	// All these constants are in em's, multiply by 10 pixels
 	// for 1024x576px canvas.
@@ -74,15 +74,15 @@ window.Player = (function() {
 			this.pos.y + HEIGHT > this.game.WORLD_HEIGHT ||
 			((this.pos.x >= first) && (this.pos.x <= second) && this.pos.y >= beetroot.pos.y)
 			) {
-			audioExtra.src = "../sounds/neigh.wav";
+			audioExtra.src = '../sounds/neigh.wav';
 			audioExtra.loop = false;
 			audioExtra.play();
 
-			document.getElementById("score").innerHTML = this.score;
+			document.getElementById('score').innerHTML = this.score;
 
 			return this.game.gameover();
 		} else {
-			audioExtra.src = "../sounds/gallop.wav";
+			audioExtra.src = '../sounds/gallop.wav';
 			audioExtra.play();
 			audioExtra.loop = true;
 
