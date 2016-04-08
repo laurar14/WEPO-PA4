@@ -11,7 +11,7 @@ window.Game = (function() {
 	 */
 	var Game = function(el) {
 		var self		= this;
-		this.el		= el;
+		this.el			= el;
 		this.level		= 30;
 		this.beetroot	= new window.BeetRoot(this.el.find('.BeetRoot'), self);
 		this.player	= new window.Player(this.el.find('.playerBlock'), this);
@@ -42,8 +42,8 @@ window.Game = (function() {
 		if(this.player.started && this.isPlaying) {
 			document.getElementById('GameCanvasBackground').style.animation ='bgMove 70s linear infinite';
 
-			this.el.children('.ground').css('animation', 'bgMove 10s linear infinite');
-			this.el.css('animation', 'bgMove 10s linear infinite');
+			this.el.children('.ground').css('animation', 'bgMove2 5s linear infinite');
+			this.el.css('animation', 'bgMove2 20s linear infinite');
 		}
 		else {
 			document.getElementById('GameCanvasBackground').style.animation = 'none';
