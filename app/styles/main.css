@@ -1,6 +1,19 @@
 body {
   background-color: black;
   height: 100%;
+  
+}
+
+footer {
+  color: #f9be80;
+}
+
+footer a{
+  color: #f99cc1;
+}
+
+footer a:hover, footer a:focus {
+  color: #f9dbe7;
 }
 .Player {
   position: absolute;
