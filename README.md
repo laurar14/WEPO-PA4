@@ -1,5 +1,5 @@
 ## HTML5 CSS-based Game
-Reykjavík University, March 2016<br>
+Reykjavík University, April 2016<br>
 T-303-WEPO - Web Programming II<br>
 Assignment: HTML5 CSS-based Game<br>
 Authors: asav13@ru.is, vedise13@ru.is, laurar14@ru.is
