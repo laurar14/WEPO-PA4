@@ -10,10 +10,8 @@
 }
 
 .Levels-button:hover, .Levels-button:focus, .Levels-button:active {
-  -moz-box-shadow: 0px 0px 100px #ff99cc;
-  -webkit-box-shadow: 0px 0px 100px #ff99cc;
-  box-shadow: 0px 0px 100px #ff99cc;
   color: white;
+  background-color: #630063;
 }
 
 .Levels.is-visible {
