@@ -15,6 +15,7 @@ window.Controls = (function() {
 
     var audioPlayer         = document.getElementById('audio');
     var audioPlayerExtra    = document.getElementById('audioExtra');
+    var flappingAudio       = document.getElementById('flappingAudio');
     var soundButton         = document.getElementById('mute');
     var text                = soundButton.lastChild;
 
@@ -25,6 +26,7 @@ window.Controls = (function() {
 
         audioPlayer.muted       = !audioPlayer.muted;
         audioPlayerExtra.muted  = !audioPlayerExtra.muted;
+        flappingAudio.muted     = !flappingAudio.muted;
         e.preventDefault();
     }, false);
 
