@@ -12,7 +12,7 @@ window.Game = (function() {
 	var Game = function(el) {
 		var self 		= this;
 		this.el 		= el;
-		this.level 		= 0;
+		this.level 		= 30;
 		this.beetroot 	= new window.BeetRoot(this.el.find('.BeetRoot'), self);
 		this.player 	= new window.Player(this.el.find('.playerBlock'), this);
 		this.isPlaying 	= false;
@@ -61,9 +61,9 @@ window.Game = (function() {
 	/**
 	 * Starts a new game.
 	 */
-	Game.prototype.start = function(x) {
-		if(x !== undefined){
-			this.level = x;
+	Game.prototype.start = function(level) {
+		if(level !== undefined){
+			this.level = level;
 		}
 		this.reset();
 
@@ -80,7 +80,7 @@ window.Game = (function() {
 	/**
 	 * Resets the state of the game so a new game can be started.
 	 */
-	Game.prototype.reset = function(x) {
+	Game.prototype.reset = function() {
 		this.player.reset(this.level);
 		this.beetroot.reset(this.level);
 	};
@@ -101,14 +101,22 @@ window.Game = (function() {
 
 		document.getElementById('highscore').innerHTML = highscore;
 		var scoreboardEl 	= this.el.find('.Scoreboard');
+		scoreboardEl.addClass('is-visible');
 
-		scoreboardEl
-			.addClass('is-visible')
-			.find('.Scoreboard-restart')
-				.one('click', function() {
-					scoreboardEl.removeClass('is-visible');
-					that.start();
-				});
+		scoreboardEl.find('.Levels-button-easy').one('click', function() {
+			scoreboardEl.removeClass('is-visible');
+			that.start(30);
+		});
+
+		scoreboardEl.find('.Levels-button-medium').one('click', function() {
+			scoreboardEl.removeClass('is-visible');
+			that.start(60);
+		});
+		scoreboardEl.find('.Levels-button-hard').one('click', function() {
+			scoreboardEl.removeClass('is-visible');
+			that.start(90);
+		});
+
 		audio.src 	= '../sounds/gameover_8bit.wav';
 		audio.loop 	= false;
 	};

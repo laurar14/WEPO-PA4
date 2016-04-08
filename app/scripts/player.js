@@ -25,14 +25,14 @@ window.Player = (function() {
 	/**
 	 * Resets the state of the player for a new game.
 	 */
-	Player.prototype.reset = function(x) {
+	Player.prototype.reset = function(level) {
 		audioExtra.src = '../sounds/gallop.wav';
 		this.el.css('animation', '0.6s ebbing alternate infinite');
 		this.started 	= false;
 		this.pos.x 		= INITIAL_POSITION_X;
 		this.pos.y 		= INITIAL_POSITION_Y;
 		this.score 		= 0;
-		this.level 		= x;
+		SPEED 			= level;
 	};
 
 	Player.prototype.onFrame = function(delta) {
@@ -40,12 +40,12 @@ window.Player = (function() {
 		// TODO FIX SO ACTS LIKE SPACE BAR
 		if(Controls.keys.space) {
 			self.started = true;
-			self.pos.y 	-= delta * (SPEED+self.level);
+			self.pos.y 	-= delta * (SPEED);
 			this.el.css('animation', 'none');
 			this.starSound.currentTime = 0;
 			this.starSound.play();
 		} else if(self.started) {
-			self.pos.y += delta * (SPEED+self.level);
+			self.pos.y += delta * (SPEED);
 		}
 
 		// Má taka þetta út??
