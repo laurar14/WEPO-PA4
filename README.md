@@ -1,6 +1,6 @@
-# HTML5 CSS-based Game
+## HTML5 CSS-based Game
 
-About the game
+#About the game
 
 * All positions and sizes defined using a 10px em. This means that the game could be scaled up and down by changing the base font-size. This is one way to make the graphics responsive.
 * The game has simple game loop which calculates delta and can be started and stopped.
@@ -15,6 +15,11 @@ About the game
 	* Levels
 	* Mouse and Spacebar for moving character
 	* The game is responsive
+
+#Browsers tests
+
+* Google Chrome
+* Microsoft Edge
 
 PS: As you can see, the player is ours truly, Daníel Brandur, riding a unicorn, trying not to hit beetroots in beetroot candy-land.
 
