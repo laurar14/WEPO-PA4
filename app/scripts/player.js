@@ -26,6 +26,7 @@ window.Player = (function() {
 	 * Resets the state of the player for a new game.
 	 */
 	Player.prototype.reset = function() {
+		audioExtra.src = '../sounds/gallop.wav';
 		this.el.css('animation', '0.6s ebbing alternate infinite');
 		this.started = false;
 		this.pos.x = INITIAL_POSITION_X;
@@ -73,11 +74,8 @@ window.Player = (function() {
 			audioExtra.loop = false;
 			audioExtra.play();
 
-			document.getElementById('score').innerHTML = this.score;
-
 			return this.game.gameover();
 		} else {
-			audioExtra.src = '../sounds/gallop.wav';
 			audioExtra.play();
 			audioExtra.loop = true;
 
@@ -91,6 +89,8 @@ window.Player = (function() {
 				raised = false;
 			}
 		}
+
+		document.getElementById('score').innerHTML = this.score;
 	};
 
 	return Player;

@@ -201,3 +201,11 @@ body {
     animation: unicorn-fly .5s steps(2) infinite;
   }
 }
+
+.onScreenScore {
+  color: purple;
+  float: right;
+  font-family: 'Courier New', monospace;
+  font-size: 4em;
+  font-weight: 900;
+}
