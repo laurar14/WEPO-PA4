@@ -13,20 +13,31 @@ window.Controls = (function() {
         40: 'down'
     };
 
-    var audioPlayer   = document.getElementById('audio');
+    var audioPlayer         = document.getElementById('audio');
     var audioPlayerExtra    = document.getElementById('audioExtra');
-    var flappingAudio      = document.getElementById('flappingAudio');
-    var soundButton   = document.getElementById('mute');
-    var text                = soundButton.lastChild;
+    var flappingAudio       = document.getElementById('flappingAudio');
+    var gameOverAudio       = document.getElementById('gameOverAudo');
+    var musicButton         = document.getElementById('mute');
+    var soundButton         = document.getElementById('muteSound');
+    var text                = musicButton.lastChild;
 
-    soundButton.addEventListener('click', function (e) {
+    musicButton.addEventListener('click', function (e) {
         $('#iconSpan').toggleClass('glyphicon-volume-up glyphicon-volume-off');
         text.data = text.data === ' Music Off' ? ' Music On' : ' Music Off';
         e = e || window.event;
 
         audioPlayer.muted      = !audioPlayer.muted;
+        e.preventDefault();
+    }, false);
+
+    soundButton.addEventListener('click', function (e) {
+        $('#iconSpan').toggleClass('glyphicon-volume-up glyphicon-volume-off');
+        text.data = text.data === ' Sound Off' ? ' Sound On' : ' Sound Off';
+        e = e || window.event;
+
         audioPlayerExtra.muted  = !audioPlayerExtra.muted;
-        flappingAudio.muted  = !flappingAudio.muted;
+        flappingAudio.muted     = !flappingAudio.muted;
+        gameOverAudio.muted     = !gameOverAudio.muted;
         e.preventDefault();
     }, false);
 

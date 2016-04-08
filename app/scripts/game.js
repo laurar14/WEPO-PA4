@@ -114,7 +114,7 @@ window.Game = (function() {
 			that.start(90);
 		});
 
-		audio.src	= '../sounds/gameover_8bit.wav';
+		audio.src	= document.getElementById('gameOverAudio');
 		audio.loop	= false;
 	};
 
