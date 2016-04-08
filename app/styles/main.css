@@ -1,6 +1,19 @@
 body {
   background-color: black;
   height: 100%;
+  
+}
+
+footer {
+  color: #f9be80;
+}
+
+footer a{
+  color: #f99cc1;
+}
+
+footer a:hover, footer a:focus {
+  color: #f9dbe7;
 }
 .Player {
   position: absolute;
@@ -29,6 +42,42 @@ body {
   display: none;
 }
 
+.Levels {
+  position: absolute;
+  /*left: 21.6em;
+  top: 10em;*/
+  left:50%;
+  top:25%;
+  height: 12em;
+  width: 35em;
+  margin-left: -20em;
+  box-sizing: border-box;
+  background: pink;
+  text-align: center;
+  -webkit-transform: translate(0, -40em);
+  -webkit-transition: -webkit-transform 0.5s;
+  opacity: 0.95;
+  border-radius: 25px;
+  border: 0.2em solid black;
+}
+.Levels-button-easy ,.Levels-button-medium , .Levels-button-hard{
+  font-size: inherit;
+  padding: 0.4em 1.5em;
+  margin-top: 3em;
+  border: 0.2em solid black;
+  background: pink;
+  cursor: pointer;
+  -moz-box-shadow: 0px 0px 100px #ff99cc;
+  -webkit-box-shadow: 0px 0px 100px #ff99cc;
+  box-shadow: 0px 0px 100px #ff99cc;
+  border-radius: 25px;
+  }
+.Levels-levelsText {
+  font-family: 'Courier New', monospace;
+  font-size: 2.4em;
+  font-weight: 900;
+  color: black;
+}
 
 .Scoreboard {
   position: absolute;
@@ -164,111 +213,48 @@ body {
 }
 
 #onScreenScore {
+  position: absolute;
+  right: 1%;
   color: purple;
   font-family: 'Courier New', monospace;
   font-size: 4em;
   font-weight: 900;
+  z-index: 1;
+}
+.well {
+  background-color: rgba(255, 0, 0, 0);
+  border: none;
 }
 
 @media screen and (max-height: 568px) and (max-width: 380px) {
   #GameCanvasBackground {
-       height: 51.2em;
+    height: 51.2em;
   }
   .ground {
-    margin-top: 45.3em;
-    width: 100%;
-    height: 6.3em;
-    background: url("../images/ground_256.png") repeat-x;
+    margin-top: 44.9em;
   }
   .BeetRoot {
-    position: absolute;
-    top: 0;
     left: -19em;
     width: 23em;
     height: 34.4em;
-    background: url("../images/beetroot.png") no-repeat;
     background-size: 21em 34.4em;
   }
 
   .Player {
-    position: absolute;
-    width: 15em;
-    height: 12.3em;
-    top: 0;
     left: -25em;
-    background: url("../images/riding_dabs.png") no-repeat;
-    animation: unicorn-fly .5s steps(2) infinite;
   }
   .Scoreboard {
-    position: absolute;
     left: 21.6em;
-    top: 10em;
     height: 25em;
     width: 25em;
-    box-sizing: border-box;
-    background: purple;
-    -webkit-transform: translate(0, -40em);
-    -webkit-transition: -webkit-transform 0.5s;
-    opacity: 0.95;
-    border-radius: 25px;
-    border: 0.2em solid white;
   }
   .Scoreboard-restart {
-    font-size: inherit;
-    padding: 0.4em 1.5em;
-    border: 0.2em solid white;
     margin-top: 1em;
-    background: none;
-    cursor: pointer;
-    -moz-box-shadow: 0px 0px 100px #ff99cc;
-    -webkit-box-shadow: 0px 0px 100px #ff99cc;
-    box-shadow: 0px 0px 100px #ff99cc;
-    border-radius: 25px;
   }
-}
-
-
-.Levels {
-  position: absolute;
-  /*left: 21.6em;
-  top: 10em;*/
-  left:50%;
-  top:25%;
-  height: 12em;
-  width: 35em;
-  margin-left: -20em;
-  box-sizing: border-box;
-  background: pink;
-  text-align: center;
-  -webkit-transform: translate(0, -40em);
-  -webkit-transition: -webkit-transform 0.5s;
-  opacity: 0.95;
-  border-radius: 25px;
-  border: 0.2em solid black;
 }
 
 /**
 * Reset transform to animate it into the correct spot on the screen.
 */
-.Levels.is-visible {
-  -webkit-transform: none;
-}
 
-.Levels-button-easy ,.Levels-button-medium , .Levels-button-hard{
-  font-size: inherit;
-  padding: 0.4em 1.5em;
-  margin-top: 3em;
-  border: 0.2em solid black;
-  background: pink;
-  cursor: pointer;
-  -moz-box-shadow: 0px 0px 100px #ff99cc;
-  -webkit-box-shadow: 0px 0px 100px #ff99cc;
-  box-shadow: 0px 0px 100px #ff99cc;
-  border-radius: 25px;
-  }
-.Levels-levelsText {
-  font-family: 'Courier New', monospace;
-  font-size: 2.4em;
-  font-weight: 900;
-  color: black;
-}
+/*NO CSS BEYOND THIS POINT FOR @MEDIA TO WORK. ONLY ADD ABOVE IT.*/

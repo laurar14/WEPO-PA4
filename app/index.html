@@ -22,19 +22,18 @@
     <body>
 
     <div class="container well">
-        <div class="audioPlayer pull-left">
-            <button id="mute" type="button" class="btn btn-primary btn-sm" data-text-swap="Unmute">
-                <span class='glyphicon glyphicon-volume-off'></span> Mute
+        <div class="audioPlayer pull-left well well-sm">
+            <button id="mute" type="button" class="btn btn-primary btn-sm" data-text-swap="Unmute Music">
+                <span class='glyphicon glyphicon-volume-off'></span> Mute Music
             </button>
             <audio id="audio" src="../sounds/circus_8bit.wav" autoplay loop></audio>
             <audio id="audioExtra" src="../sounds/gallop.wav"></audio>
-        </div>
-        <div id="onScreenScore" class="pull-right"></div>
-            
+        </div>            
             <!--[if lt IE 10]>
                 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
             <![endif]-->
-        <div id="GameCanvasBackground">        
+        <div id="GameCanvasBackground">
+            <div id="onScreenScore"></div>  
             <div class="GameCanvas">            
                 <div class="BeetRoot"></div>
                 <div class="playerBlock">
@@ -43,9 +42,10 @@
                 <div class="ground"></div>
 
                 <div class="Scoreboard text-center">
+                    <br>
                     <span class="Scoreboard-scoreText">Score: 
                         <div id="score"></div>
-                    </span><br>
+                    </span>
                     <span class="Scoreboard-scoreText">Highscore: 
                         <div id="highscore"></div>
                     </span>
@@ -69,8 +69,15 @@
 
                 </div>
             </div>
-        </div>
+        </div>    
+        <footer class="well">
+            <small><span class="glyphicon glyphicon-star-empty"></span>
+            Created by: <a href="mailto:asav13@ru.is">asav13@ru.is</a>,
+            <a href="mailto:laurar14@ru.is">laurar14@ru.is</a>, 
+            <a href="mailto:vedise13@ru.is">vedise13@ru.is</a></small>
+        </footer>
     </div>
+
     
 
         <!-- build:js scripts/vendor.js -->
