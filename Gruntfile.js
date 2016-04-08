@@ -142,7 +142,7 @@ module.exports = function (grunt) {
         },
 
         // Compiles Sass to CSS and generates necessary files if requested
-        compass: {
+        /*compass: {
             options: {
                 sassDir: '<%= config.app %>/styles',
                 cssDir: '.tmp/styles',
@@ -167,7 +167,7 @@ module.exports = function (grunt) {
                     debugInfo: true
                 }
             }
-        },
+        },*/
 
         // Add vendor prefixed styles
         autoprefixer: {
@@ -190,10 +190,6 @@ module.exports = function (grunt) {
                 src: ['<%= config.app %>/index.html'],
                 ignorePath: '<%= config.app %>/',
                 exclude: ['<%= config.app %>/bower_components/bootstrap-sass/vendor/assets/javascripts/bootstrap.js']
-            },
-            sass: {
-                src: ['<%= config.app %>/styles/{,*/}*.{scss,sass}'],
-                ignorePath: '<%= config.app %>/bower_components/'
             }
         },
 
