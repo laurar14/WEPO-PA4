@@ -16,10 +16,11 @@ Authors: asav13@ru.is, vedise13@ru.is, laurar14@ru.is
 * Hitting beets, clouds or ground will kill the player instantly.
 * When player dies, he will see his score and the highscore.
 
-* Extra fetures
+* Extra features
 	* Levels
 	* Mouse and Spacebar for moving character
 	* The game is responsive
+	* Mute support for sound effects 
 
 #Browsers tests
 
