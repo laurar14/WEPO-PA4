@@ -1,5 +1,4 @@
-.Levels-button {
-  font-size: inherit;
+.Levels-button {font-size: inherit;
   padding: 0.4em 1em;
   margin-top: 1em;
   border: 0.2em solid white;
@@ -171,8 +170,8 @@ footer a:hover, footer a:focus {
 }
 
 @keyframes bgMove {
-  from { background-position: 0 0; }
-  to { background-position: -102.4em 0; }
+  from { background-position: 0 -5.5; }
+  to { background-position: -102.4em -5.5; }
 }
 
 @keyframes ebbing {
