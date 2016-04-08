@@ -174,10 +174,13 @@ body {
 }
 
 #onScreenScore {
+  position: absolute;
+  right: 1%;
   color: purple;
   font-family: 'Courier New', monospace;
   font-size: 4em;
   font-weight: 900;
+  z-index: 1;
 }
 
 @media screen and (max-height: 568px) and (max-width: 380px) {
