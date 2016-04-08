@@ -51,6 +51,9 @@ body {
   text-align: center;
   -webkit-transform: translate(0, -40em);
   -webkit-transition: -webkit-transform 0.5s;
+  opacity: 0.95;
+  border-radius: 25px;
+  border: 0.2em solid white;
 }
 
 /**
@@ -61,22 +64,27 @@ body {
 }
 
 .Scoreboard-restart {
-  margin-top: 15em;
   font-size: inherit;
   padding: 0.4em 1.5em;
   border: 0.2em solid white;
   background: none;
   cursor: pointer;
-}
+  -moz-box-shadow: 0px 0px 100px #ff99cc;
+  -webkit-box-shadow: 0px 0px 100px #ff99cc;
+  box-shadow: 0px 0px 100px #ff99cc;
+  border-radius: 25px;
+  }
 .Scoreboard-restartText {
-  font-family: 'Comic Sans MS', serif;
+  font-family: 'Courier New', monospace;
   font-size: 2.4em;
+  font-weight: 900;
   color: white;
 }
 .Scoreboard-scoreText {
-  margin-top: 5em;
-  font-family: 'Comic Sans MS', serif;
-  font-size: 2.4em;
+  font-family: 'Courier New', monospace;
+  font-size: 2.7em;
+  font-weight: 900;
+  font-variant: small-caps;
   color: white;
 }
 
