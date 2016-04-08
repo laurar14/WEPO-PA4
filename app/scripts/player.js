@@ -47,7 +47,6 @@ window.Player = (function() {
 
 		else if(self.started){
 			self.pos.y += delta * SPEED;
-			//console.log('IIIII KEEEEP ON FAAAALLING, IN AND OOOOUUUT');
 		}
 		this.checkCollisionWithBounds();
 
@@ -64,16 +63,12 @@ window.Player = (function() {
 		var beetroot = (this.game.beetroot);
 		var beetX = beetroot.pos.x;
 
-		var halfBeetWidth = beetroot.WIDTH;
-		var first = beetX - 5;
-		var second = beetX + 5;
-		var thisX = this.pos.x;
-
 		if (
 			this.pos.y < 0 ||
 			this.pos.y + HEIGHT > this.game.WORLD_HEIGHT ||
-			((this.pos.x >= first) && (this.pos.x <= second) && this.pos.y >= beetroot.pos.y)
+			(beetX < 22 && beetX > -10 && this.pos.y >= beetroot.pos.y-5)
 			) {
+			
 			audioExtra.src = '../sounds/neigh.wav';
 			audioExtra.loop = false;
 			audioExtra.play();
@@ -87,12 +82,11 @@ window.Player = (function() {
 			audioExtra.loop = true;
 
 			//if you are past half way over the beet you get +1 score
-			if(this.pos.x >= beetX && this.pos.x <= second) {
+			if(beetX < 22 && beetX > -10) {
 				if(!raised) {
 					this.score++;
 				}
 				raised = true;
-				console.log(this.score);
 			} else {
 				raised = false;
 			}
