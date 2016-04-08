@@ -170,8 +170,13 @@ footer a:hover, footer a:focus {
 }
 
 @keyframes bgMove {
-  from { background-position: 0 -5.5; }
-  to { background-position: -102.4em -5.5; }
+  from { background-position: 0 -5.5em; }
+  to { background-position: -102.4em -5.5em; }
+}
+
+@keyframes bgMove2 {
+  from { background-position: 0 0e; }
+  to { background-position: -102.4em 0; }
 }
 
 @keyframes ebbing {
