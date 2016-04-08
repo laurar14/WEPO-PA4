@@ -12,7 +12,8 @@ window.Player = (function() {
 	var INITIAL_POSITION_X 	= 30;
 	var INITIAL_POSITION_Y 	= 25;
 
-	var raised = false;
+	var raised 		= false;
+	var movedUpLast = false;
 
 	var Player = function(el, game) {
 		this.el 		= el;
@@ -42,16 +43,18 @@ window.Player = (function() {
 			self.started = true;
 			self.pos.y 	-= delta * (SPEED);
 			this.el.css('animation', 'none');
-			this.starSound.currentTime = 0;
+
+			if(!movedUpLast) {
+				this.starSound.currentTime = 0;
 			this.starSound.play();
+			}
+
+			movedUpLast = true;
 		} else if(self.started) {
 			self.pos.y += delta * (SPEED);
+			movedUpLast = false;
 		}
 
-		// Má taka þetta út??
-		if(Controls.keys.up){
-			console.log(this.game.beetroot.pos.x);
-		}
 		this.checkCollisionWithBounds();
 
 		// Update UI
