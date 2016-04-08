@@ -200,6 +200,11 @@ footer a:hover, footer a:focus {
   border: none;
 }
 
+.audioPlayer {
+  position: absolute;
+  
+}
+
 @media screen and (max-height: 568px) and (max-width: 380px) {
   #GameCanvasBackground {
     height: 51.2em;
