@@ -1,45 +1,60 @@
-.Levels-button-easy ,.Levels-button-medium , .Levels-button-hard {
-   font-size: inherit;
-   padding: 0.4em 1.5em;
-   margin-top: 3em;
-   border: 0.2em solid white;
-   background: transparent;
-   cursor: pointer;
-   border-radius: 25px;
+.Levels-button {
+  font-size: inherit;
+  padding: 0.4em 1em;
+  margin-top: 1em;
+  border: 0.2em solid white;
+  background: transparent;
+  font-size: 1.8em;
+  font-weight: 900;
+  color: white;
 }
 
-.Levels-button-easy:hover, .Levels-button-medium:hover, .Levels-button-hard:hover {
-     -moz-box-shadow: 0px 0px 100px #ff99cc;
-   -webkit-box-shadow: 0px 0px 100px #ff99cc;
-   box-shadow: 0px 0px 100px #ff99cc;
-}
-
-.Levels-levelsText {
-   font-family: 'Courier New', monospace;
-   font-size: 2.4em;
-   font-weight: 900;
-   color: white;
+.Levels-button:hover {
+  -moz-box-shadow: 0px 0px 100px #ff99cc;
+  -webkit-box-shadow: 0px 0px 100px #ff99cc;
+  box-shadow: 0px 0px 100px #ff99cc;
+  color: white;
 }
 
 .Levels.is-visible {
-   -webkit-transform: none;
+  -webkit-transform: none;
 }
 
 body {
-   background-color: black;
-   height: 100%;
+  height: 100%;
+  background-image: url("../images/body_stars.png");
+  background-color: black;
+  background-position: right top;
+  background-attachment: fixed;
+  background-repeat: repeat-x;
 }
 
 footer {
-   color: #f9be80;
+  color: #f9be80;
+  background-color: black;
 }
 
+.well .well-xs {
+  margin-bottom: 0;
+}
 footer a {
-   color: #f99cc1;
+  color: #f99cc1;
 }
 
 footer a:hover, footer a:focus {
-   color: #f9dbe7;
+  color: #f9dbe7;
+}
+
+.btn:focus, .btn:active:focus, .btn.active:focus {
+    outline: 0 none;
+     background: #4d004d;
+} 
+.btn-primary {
+  background: purple;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active{
+  background: #4d004d;
 }
 
 .Player {
@@ -50,11 +65,6 @@ footer a:hover, footer a:focus {
    left: -20em;
    background: url("../images/riding_dabs.png") no-repeat;
    animation: unicorn-fly .5s steps(2) infinite;
-}
-
-@keyframes unicorn-fly {
-   from { background-position: 0em; }
-   to { background-position: -30em; }
 }
 
 .BeetRoot {
@@ -70,20 +80,21 @@ footer a:hover, footer a:focus {
 }
 
 .Scoreboard {
-   position: absolute;
-   left: 50%;
-   top: 10em;
-   height: 30em;
-   width: 40em;
-   margin-left: -20em;
-   box-sizing: border-box;
-   background: purple;
-   text-align: center;
-   -webkit-transform: translate(0, -40em);
-   -webkit-transition: -webkit-transform 0.5s;
-   opacity: 0.95;
-   border-radius: 25px;
-   border: 0.2em solid white;
+  position: absolute;
+  left: 50%;
+  top: 10em;
+  height: 30em;
+  width: 30em;
+  margin-left: -15em;
+  box-sizing: border-box;
+  background: purple;
+  -webkit-transform: translate(0, -40em);
+  -webkit-transition: -webkit-transform 0.5s;
+  opacity: 0.95;
+  border-radius: 25px;
+  border: 0.2em solid white;
+  font-family: 'Courier New', monospace;
+  font-size: 1em;
 }
 
 /**
@@ -124,11 +135,6 @@ footer a:hover, footer a:focus {
    padding: 0.2em 0;
 }
  
-@keyframes bgMove {
-   from { background-position: 0 0; }
-   to { background-position: -102.4em 0; }
-}
-
 #GameCanvasBackground {
    font-size: 10px;
    position: relative;
@@ -136,11 +142,6 @@ footer a:hover, footer a:focus {
    height: 57.6em;
    overflow: hidden;
    background: url("../images/bg_stars.png") repeat;
-}
-
-@keyframes ebbing {
-   from { transform: rotateX(0); transform: translate(30em, 25em); }
-   to { transform: rotateX(180deg); transform: translate(30em, 30em); }
 }
 
 #onScreenScore {
@@ -160,6 +161,21 @@ footer a:hover, footer a:focus {
 
 .audioPlayer {
    position: absolute;
+}
+
+@keyframes bgMove {
+   from { background-position: 0 0; }
+   to { background-position: -102.4em 0; }
+}
+
+@keyframes ebbing {
+   from { transform: rotateX(0); transform: translate(30em, 25em); }
+   to { transform: rotateX(180deg); transform: translate(30em, 30em); }
+}
+
+@keyframes unicorn-fly {
+   from { background-position: 0em; }
+   to { background-position: -30em; }
 }
 
 @media screen and (max-height: 568px) and (max-width: 380px) {
@@ -183,10 +199,14 @@ footer a:hover, footer a:focus {
    }
 
    .Scoreboard {
-      left: 21.6em;
-      height: 25em;
+      left: 16.6em;
+      height: 28em;
       width: 25em;
    }
+
+   .btn-group-vertical {
+    padding-bottom: 1em;
+  }
 }
 
 /**
