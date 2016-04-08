@@ -38,6 +38,13 @@ window.Player = (function() {
 	Player.prototype.onFrame = function(delta) {
 		var self = this;
 
+		$('#GameCanvasBackground').mousedown(function() {
+			Controls.keys.space = true;
+		});
+		$('#GameCanvasBackground').mouseup(function() {
+			Controls.keys.space = false;
+		});
+
 		if(Controls.keys.space) {
 			self.started = true;
 			self.pos.y	-= delta * SPEED;
