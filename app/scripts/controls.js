@@ -15,16 +15,11 @@ window.Controls = (function() {
     var audioPlayer = document.getElementById('audio');
     var audioPlayerExtra = document.getElementById('audioExtra');
     var soundButton = document.getElementById('mute');
+    var text = soundButton.lastChild;
 
-    soundButton.addEventListener('click', function (e)
-    {
-        if (soundButton.getAttribute('data-text-swap') === soundButton.innerHTML) {
-            soundButton.innerHTML = soundButton.getAttribute('data-text-original');
-        }
-        else {
-            soundButton.setAttribute('data-text-original', soundButton.innerHTML);
-            soundButton.innerHTML = soundButton.getAttribute('data-text-swap');
-        }
+    soundButton.addEventListener('click', function (e) {
+        $('#iconSpan').toggleClass('glyphicon-volume-up glyphicon-volume-off');
+        text.data = text.data == " Music Off" ? " Music On" : " Music Off";
         e = e || window.event;
         audioPlayer.muted = !audioPlayer.muted;
         audioPlayerExtra.muted = !audioPlayerExtra.muted;

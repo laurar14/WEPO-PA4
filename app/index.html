@@ -1,11 +1,12 @@
-<!doctype html>
+<!DOCTYPE html>
+<html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
-        <title>html5 game new</title>
+        <title>Beetroot Land</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         <link rel="shortcut icon" href="/favicon.ico">
@@ -28,8 +29,8 @@
         <div id="GameCanvasBackground">
             <div id="onScreenScore"></div>
             <div class="audioPlayer pull-left well well-sm">
-                <button id="mute" type="button" class="btn btn-primary btn-xs" data-text-swap="Music Off">
-                    <span class='glyphicon glyphicon-volume-up'></span> Music On
+                <button id="mute" type="button" class="btn btn-primary btn-xs">
+                    <span id="iconSpan" class='glyphicon glyphicon-volume-up'></span> Music On
                 </button>
                 <audio id="audio" src="../sounds/circus_8bit.wav" autoplay loop></audio>
                 <audio id="audioExtra" src="../sounds/gallop.wav"></audio>
@@ -53,7 +54,6 @@
                         <span class="Scoreboard-restartText">Restart</span>
                     </button>
                 </div>
-
                 <div class="Levels text-center">
                     <button role="button" class="Levels-button-easy">
                         <span class="Levels-levelsText">Easy</span>
@@ -65,17 +65,15 @@
                         <span class="Levels-levelsText">Hard</span>
                     </button>
                 </div>
-
-
-                </div>
             </div>
-            <footer class="well text-center">
-                <small><span class="glyphicon glyphicon-star-empty"></span>
-                Created by: <a href="mailto:asav13@ru.is">asav13@ru.is</a>,
-                <a href="mailto:laurar14@ru.is">laurar14@ru.is</a>, 
-                <a href="mailto:vedise13@ru.is">vedise13@ru.is</a></small>
-            </footer>
-        </div> 
+        </div>
+        <footer class="well text-center">
+            <small><span class="glyphicon glyphicon-star-empty"></span>
+            Created by: <a href="mailto:asav13@ru.is">asav13@ru.is</a>,
+            <a href="mailto:laurar14@ru.is">laurar14@ru.is</a>, 
+            <a href="mailto:vedise13@ru.is">vedise13@ru.is</a></small>
+        </footer>
+    </div> 
 
     
 
@@ -94,5 +92,5 @@
         <script src="scripts/beetroot.js"></script>
         <script src="scripts/utils.js"></script>
         <!-- endbuild -->
-</body>
+    </body>
 </html>

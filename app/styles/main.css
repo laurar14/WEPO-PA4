@@ -1,268 +1,239 @@
 .Levels {
-  position: absolute;
-  /*left: 21.6em;
-  top: 10em;*/
-  left:50%;
-  top:25%;
-  height: 12em;
-  width: 35em;
-  margin-left: -20em;
-  box-sizing: border-box;
-  background: pink;
-  text-align: center;
-  -webkit-transform: translate(0, -40em);
-  -webkit-transition: -webkit-transform 0.5s;
-  opacity: 0.95;
-  border-radius: 25px;
-  border: 0.2em solid black;
+   position: absolute;
+   left: 50%;
+   top: 25%;
+   height: 12em;
+   width: 35em;
+   margin-left: -20em;
+   box-sizing: border-box;
+   background: pink;
+   text-align: center;
+   -webkit-transform: translate(0, -40em);
+   -webkit-transition: -webkit-transform 0.5s;
+   opacity: 0.95;
+   border-radius: 25px;
+   border: 0.2em solid black;
 }
-.Levels-button-easy ,.Levels-button-medium , .Levels-button-hard{
-  font-size: inherit;
-  padding: 0.4em 1.5em;
-  margin-top: 3em;
-  border: 0.2em solid black;
-  background: pink;
-  cursor: pointer;
-  -moz-box-shadow: 0px 0px 100px #ff99cc;
-  -webkit-box-shadow: 0px 0px 100px #ff99cc;
-  box-shadow: 0px 0px 100px #ff99cc;
-  border-radius: 25px;
-  }
+
+.Levels-button-easy ,.Levels-button-medium , .Levels-button-hard {
+   font-size: inherit;
+   padding: 0.4em 1.5em;
+   margin-top: 3em;
+   border: 0.2em solid black;
+   background: pink;
+   cursor: pointer;
+   -moz-box-shadow: 0px 0px 100px #ff99cc;
+   -webkit-box-shadow: 0px 0px 100px #ff99cc;
+   box-shadow: 0px 0px 100px #ff99cc;
+   border-radius: 25px;
+}
+
 .Levels-levelsText {
-  font-family: 'Courier New', monospace;
-  font-size: 2.4em;
-  font-weight: 900;
-  color: black;
+   font-family: 'Courier New', monospace;
+   font-size: 2.4em;
+   font-weight: 900;
+   color: black;
 }
+
 .Levels.is-visible {
-  -webkit-transform: none;
+   -webkit-transform: none;
 }
-
-
 
 body {
-  background-color: black;
-  height: 100%;
-  
+   background-color: black;
+   height: 100%;
 }
 
 footer {
-  color: #f9be80;
+   color: #f9be80;
 }
 
-footer a{
-  color: #f99cc1;
+footer a {
+   color: #f99cc1;
 }
 
 footer a:hover, footer a:focus {
-  color: #f9dbe7;
+   color: #f9dbe7;
 }
-.Player {
-  position: absolute;
-  width: 15em;
-  height: 12.3em;
-  top: 0;
-  left: -20em;
-  background: url("../images/riding_dabs.png") no-repeat;
-  animation: unicorn-fly .5s steps(2) infinite;
-}
-@keyframes unicorn-fly {
-    from { background-position:  0em; }
-    to { background-position:  -30em; }
-  }
 
+.Player {
+   position: absolute;
+   width: 15em;
+   height: 12.3em;
+   top: 0;
+   left: -20em;
+   background: url("../images/riding_dabs.png") no-repeat;
+   animation: unicorn-fly .5s steps(2) infinite;
+}
+
+@keyframes unicorn-fly {
+   from { background-position: 0em; }
+
+   to { background-position: -30em; }
+}
 
 .BeetRoot {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 25em;
-  height: 39.1em;
-  max-width: 75%;
-  max-height: 75%;
-  background: url("../images/beetroot.png") no-repeat;
-  display: none;
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 25em;
+   height: 39.1em;
+   max-width: 75%;
+   max-height: 75%;
+   background: url("../images/beetroot.png") no-repeat;
+   display: none;
 }
 
-
-
 .Scoreboard {
-  position: absolute;
-  left: 50%;
-  top: 10em;
-  height: 30em;
-  width: 40em;
-  margin-left: -20em;
-  box-sizing: border-box;
-  background: purple;
-  text-align: center;
-  -webkit-transform: translate(0, -40em);
-  -webkit-transition: -webkit-transform 0.5s;
-  opacity: 0.95;
-  border-radius: 25px;
-  border: 0.2em solid white;
+   position: absolute;
+   left: 50%;
+   top: 10em;
+   height: 30em;
+   width: 40em;
+   margin-left: -20em;
+   box-sizing: border-box;
+   background: purple;
+   text-align: center;
+   -webkit-transform: translate(0, -40em);
+   -webkit-transition: -webkit-transform 0.5s;
+   opacity: 0.95;
+   border-radius: 25px;
+   border: 0.2em solid white;
 }
 
 /**
 * Reset transform to animate it into the correct spot on the screen.
 */
 .Scoreboard.is-visible {
-  -webkit-transform: none;
+   -webkit-transform: none;
 }
 
 .Scoreboard-restart {
-  font-size: inherit;
-  padding: 0.4em 1.5em;
-  margin-top: 3em;
-  border: 0.2em solid white;
-  background: none;
-  cursor: pointer;
-  -moz-box-shadow: 0px 0px 100px #ff99cc;
-  -webkit-box-shadow: 0px 0px 100px #ff99cc;
-  box-shadow: 0px 0px 100px #ff99cc;
-  border-radius: 25px;
-  }
+   font-size: inherit;
+   padding: 0.4em 1.5em;
+   margin-top: 3em;
+   border: 0.2em solid white;
+   background: none;
+   cursor: pointer;
+   -moz-box-shadow: 0px 0px 100px #ff99cc;
+   -webkit-box-shadow: 0px 0px 100px #ff99cc;
+   box-shadow: 0px 0px 100px #ff99cc;
+   border-radius: 25px;
+}
+
 .Scoreboard-restartText {
-  font-family: 'Courier New', monospace;
-  font-size: 2.4em;
-  font-weight: 900;
-  color: white;
+   font-family: 'Courier New', monospace;
+   font-size: 2.4em;
+   font-weight: 900;
+   color: white;
 }
+
 .Scoreboard-scoreText {
-  padding-top: 2em;
-  font-family: 'Courier New', monospace;
-  font-size: 2.7em;
-  font-weight: 900;
-  font-variant: small-caps;
-  color: white;
+   padding-top: 2em;
+   font-family: 'Courier New', monospace;
+   font-size: 2.7em;
+   font-weight: 900;
+   font-variant: small-caps;
+   color: white;
 }
 
 .GameCanvas {
-  font-size: 10px;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  background: url("../images/clouds.png") repeat-x;
+   font-size: 10px;
+   width: 100%;
+   height: 100%;
+   overflow: hidden;
+   background: url("../images/clouds.png") repeat-x;
 }
+
 .ground {
-  margin-top: 51.3em;
-  width: 100%;
-  height: 6.3em;
-  background: url("../images/ground_256.png") repeat-x;
+   margin-top: 51.3em;
+   width: 100%;
+   height: 6.3em;
+   background: url("../images/ground_256.png") repeat-x;
 }
+
 .browsehappy {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
+   margin: 0.2em 0
+   background: #ccc;
+   color: #000;
+   padding: 0.2em 0;
 }
-
-/*
-.GameCanvas {
-  font-size: 10px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 102.4em;
-  height: 57.6em;
-  margin-left: -51.2em;
-  margin-top: -28.8em;
-  overflow: hidden;
-  background: url("../images/skyAndFloor.png");
-  background-size: contain;
-  background-repeat: tile;
-  animation: bgMove 10s linear infinite;
-}
-*/
-
  
 @keyframes bgMove {
-  from {background-position: 0 0;}
-  to {background-position: -102.4em 0;}
+   from { background-position: 0 0; }
+
+   to { background-position: -102.4em 0; }
 }
 
 #GameCanvasBackground {
-  font-size: 10px;
-  position: relative;
-  width: 100%;
-  height: 57.6em;
-  overflow: hidden;
-  background: url("../images/bg_stars.png") repeat;
+   font-size: 10px;
+   position: relative;
+   width: 100%;
+   height: 57.6em;
+   overflow: hidden;
+   background: url("../images/bg_stars.png") repeat;
 }
 
-/*
-.GameCanvasBackground {
-  font-size: 10px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 102.4em;
-  height: 57.6em;
-  margin-left: -51.2em;
-  margin-top: -28.8em;
-  overflow: hidden;
-  background: url("http://i.imgur.com/PhFQkdl.png");
-  background-size: contain;
-  background-repeat: tile;
-  
-  animation: bgMove 20s linear infinite;
-}
-*/
 @keyframes ebbing {
-  from {
-    transform: rotateX(0);
-    transform: translate(30em, 25em);
-  }
-  to {
-    transform: rotateX(180deg);
-    transform: translate(30em, 30em);
-  }
+   from {
+      transform: rotateX(0);
+      transform: translate(30em, 25em);
+   }
+
+   to {
+      transform: rotateX(180deg);
+      transform: translate(30em, 30em);
+   }
 }
 
 #onScreenScore {
-  position: absolute;
-  right: 1%;
-  color: purple;
-  font-family: 'Courier New', monospace;
-  font-size: 4em;
-  font-weight: 900;
-  z-index: 1;
+   position: absolute;
+   right: 1%;
+   color: purple;
+   font-family: 'Courier New', monospace;
+   font-size: 4em;
+   font-weight: 900;
+   z-index: 1;
 }
+
 .well {
-  background-color: rgba(255, 0, 0, 0);
-  border: none;
+   background-color: rgba(255, 0, 0, 0);
+   border: none;
 }
 
 .audioPlayer {
-  position: absolute;
-  
+   position: absolute;
 }
 
 @media screen and (max-height: 568px) and (max-width: 380px) {
-  #GameCanvasBackground {
-    height: 51.2em;
-  }
-  .ground {
-    margin-top: 44.9em;
-  }
-  .BeetRoot {
-    left: -19em;
-    width: 23em;
-    height: 34.4em;
-    background-size: 21em 34.4em;
-  }
+   #GameCanvasBackground {
+      height: 51.2em;
+   }
 
-  .Player {
-    left: -25em;
-  }
-  .Scoreboard {
-    left: 21.6em;
-    height: 25em;
-    width: 25em;
-  }
-  .Scoreboard-restart {
-    margin-top: 1em;
-  }
+   .ground {
+      margin-top: 44.9em;
+   }
+
+   .BeetRoot {
+      left: -19em;
+      width: 23em;
+      height: 34.4em;
+      background-size: 21em 34.4em;
+   }
+
+   .Player {
+      left: -25em;
+   }
+
+   .Scoreboard {
+      left: 21.6em;
+      height: 25em;
+      width: 25em;
+   }
+
+   .Scoreboard-restart {
+      margin-top: 1em;
+   }
 }
 
 /**
