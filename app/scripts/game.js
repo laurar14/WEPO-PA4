@@ -69,7 +69,6 @@ window.Game = (function() {
 		window.requestAnimationFrame(this.onFrame);
 		this.isPlaying = true;
 
-		//audio.src = '../sounds/circus_8bit.wav';
 		audio.src = '../sounds/circus_8bit.wav';
 		audio.loop = true;
 	};
@@ -88,8 +87,6 @@ window.Game = (function() {
 	Game.prototype.gameover = function() {
 		this.isPlaying = false;
 
-		// Should be refactored into a Scoreboard class.
-		//TODO
 		var that = this;
 		
 		if(that.player.score > highscore) {

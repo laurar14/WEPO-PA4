@@ -7,7 +7,7 @@ window.BeetRoot = (function() {
 	// for 1024x576px canvas.
 	var SPEED				= 30; // * 10 pixels per second
 	var INITIAL_POSITION_X	= 60;
-	var INITIAL_POSITION_Y	= 25; // between, 18 and 30,
+	var INITIAL_POSITION_Y	= 25;
 
 	var BeetRoot = function(el, game) {
 		this.el	= el;
