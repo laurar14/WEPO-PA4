@@ -22,4 +22,11 @@ $(function() {
 			levels.removeClass('is-visible');
 			game.start(90);
 		});
+
+		var currentURL = window.location.href;
+		console.log('currentURL: ' + currentURL);
+		if(currentURL !== 'http://127.0.0.1:9000/') {
+			window.location = 'http://127.0.0.1:9000/404.html'
+		}
+		
 });
