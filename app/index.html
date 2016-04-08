@@ -28,18 +28,22 @@
         <div id="GameCanvasBackground">
             <div id="onScreenScore"></div>
             <div class="audioPlayer pull-left well well-sm">
+                
                 <button id="mute" type="button" class="btn btn-primary btn-xs">
                     <span id="iconSpan" class='glyphicon glyphicon-volume-up'></span> Music On
                 </button>
+                
                 <button id="muteSound" type="button" class="btn btn-primary btn-xs">
-                    <span id="iconSpan" class='glyphicon glyphicon-volume-up'></span> Sound On
+                    <span id="iconSpanSound" class='glyphicon glyphicon-volume-up'></span> Sound On
                 </button>
+
                 <audio id="audio" src="../sounds/circus_8bit.wav" autoplay loop></audio>
                 <audio id="audioExtra" src="../sounds/gallop.wav"></audio>
                 <audio id="flappingAudio" src="../sounds/star.wav"></audio>
                 <audio id="gameOverAudio" src="../sounds/gameover_8bit.wav"></audio>
             </div>
-            <div class="GameCanvas">            
+
+            <div class="GameCanvas">
                 <div class="BeetRoot"></div>
                 <div class="playerBlock">
                     <div class="Player"></div>

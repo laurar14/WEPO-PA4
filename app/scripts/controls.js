@@ -16,14 +16,15 @@ window.Controls = (function() {
     var audioPlayer         = document.getElementById('audio');
     var audioPlayerExtra    = document.getElementById('audioExtra');
     var flappingAudio       = document.getElementById('flappingAudio');
-    var gameOverAudio       = document.getElementById('gameOverAudo');
+    var gameOverAudio       = document.getElementById('gameOverAudio');
     var musicButton         = document.getElementById('mute');
     var soundButton         = document.getElementById('muteSound');
-    var text                = musicButton.lastChild;
+    var musicText           = musicButton.lastChild;
+    var soundText           = soundButton.lastChild;
 
     musicButton.addEventListener('click', function (e) {
         $('#iconSpan').toggleClass('glyphicon-volume-up glyphicon-volume-off');
-        text.data = text.data === ' Music Off' ? ' Music On' : ' Music Off';
+        musicText.data = musicText.data === ' Music Off' ? ' Music On' : ' Music Off';
         e = e || window.event;
 
         audioPlayer.muted      = !audioPlayer.muted;
@@ -31,8 +32,8 @@ window.Controls = (function() {
     }, false);
 
     soundButton.addEventListener('click', function (e) {
-        $('#iconSpan').toggleClass('glyphicon-volume-up glyphicon-volume-off');
-        text.data = text.data === ' Sound Off' ? ' Sound On' : ' Sound Off';
+        $('#iconSpanSound').toggleClass('glyphicon-volume-up glyphicon-volume-off');
+        soundText.data = soundText.data === ' Sound Off' ? ' Sound On' : ' Sound Off';
         e = e || window.event;
 
         audioPlayerExtra.muted  = !audioPlayerExtra.muted;
