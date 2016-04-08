@@ -44,10 +44,11 @@ window.Game = (function() {
 		this.beetroot.onFrame(delta);
 		
 		if(this.player.started && this.isPlaying) {
-			var lvls = this.el.find('.Levels');
-			lvls.removeClass('is-visible');
+			
+			document.getElementById('GameCanvasBackground').style.animation ='bgMove 20s linear infinite';
 
 			document.getElementById('GameCanvasBackground').style.animation ='bgMove 70s linear infinite';
+
 			this.el.children('.ground').css('animation', 'bgMove 10s linear infinite');
 			this.el.css('animation', 'bgMove 10s linear infinite');
 		}
