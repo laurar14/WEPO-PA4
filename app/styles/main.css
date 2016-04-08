@@ -68,7 +68,6 @@ footer a:hover, footer a:focus {
 
 @keyframes unicorn-fly {
    from { background-position: 0em; }
-
    to { background-position: -30em; }
 }
 
@@ -161,7 +160,6 @@ footer a:hover, footer a:focus {
  
 @keyframes bgMove {
    from { background-position: 0 0; }
-
    to { background-position: -102.4em 0; }
 }
 
@@ -175,15 +173,8 @@ footer a:hover, footer a:focus {
 }
 
 @keyframes ebbing {
-   from {
-      transform: rotateX(0);
-      transform: translate(30em, 25em);
-   }
-
-   to {
-      transform: rotateX(180deg);
-      transform: translate(30em, 30em);
-   }
+   from { transform: rotateX(0); transform: translate(30em, 25em); }
+   to { transform: rotateX(180deg); transform: translate(30em, 30em); }
 }
 
 #onScreenScore {
