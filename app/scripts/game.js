@@ -1,9 +1,8 @@
-
 window.Game = (function() {
 	'use strict';
 
-	var audio = document.getElementById('audio');
-	var highscore = 0;
+	var audio 		= document.getElementById('audio');
+	var highscore 	= 0;
 
 	/**
 	 * Main game class.
@@ -11,17 +10,14 @@ window.Game = (function() {
 	 * @constructor
 	 */
 	var Game = function(el) {
-		var self = this;
-		this.el = el;
-		this.level = 0;
-		this.beetroot = new window.BeetRoot(this.el.find('.BeetRoot'), self);
-		this.player = new window.Player(this.el.find('.playerBlock'), this);
-		this.isPlaying = false;
+		var self 		= this;
+		this.el 		= el;
+		this.level 		= 0;
+		this.beetroot 	= new window.BeetRoot(this.el.find('.BeetRoot'), self);
+		this.player 	= new window.Player(this.el.find('.playerBlock'), this);
+		this.isPlaying 	= false;
 		// Cache a bound onFrame since we need it each frame.
-		this.onFrame = this.onFrame.bind(this);
-		
-		
-
+		this.onFrame 	= this.onFrame.bind(this);
 	};
 
 	/**
@@ -36,8 +32,8 @@ window.Game = (function() {
 
 		// Calculate how long since last frame in seconds.
 		var now = +new Date() / 1000,
-		delta = now - this.lastFrame;
-		this.lastFrame = now;
+		delta 			= now - this.lastFrame;
+		this.lastFrame 	= now;
 
 		// Update game entities.
 		this.player.onFrame(delta);
@@ -57,8 +53,8 @@ window.Game = (function() {
 			this.el.css('animation', 'none');
 			this.el.children('.ground').css('animation', 'none');
 		}
-		// Request next frame.
 
+		// Request next frame.
 		window.requestAnimationFrame(this.onFrame);
 	};
 
@@ -114,14 +110,14 @@ window.Game = (function() {
 					that.start();
 				});
 
-		audio.src = '../sounds/gameover_8bit.wav';
-		audio.loop = false;
+		audio.src 	= '../sounds/gameover_8bit.wav';
+		audio.loop 	= false;
 	};
 
 	/**
 	 * Some shared constants.
 	 */
-	Game.prototype.WORLD_WIDTH = 102.4;
+	Game.prototype.WORLD_WIDTH 	= 102.4;
 	Game.prototype.WORLD_HEIGHT = 57.6;
 
 	return Game;
