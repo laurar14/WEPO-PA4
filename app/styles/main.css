@@ -148,6 +148,7 @@ footer a:hover, footer a:focus {
   overflow: hidden;
   background: url("../images/background.png") repeat-x;
   background-position: 0 -5.5em;
+  background-size: contain;
 }
 
 #onScreenScore {
