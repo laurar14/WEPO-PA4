@@ -21,8 +21,8 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 25.6em;
-  height: 40em;
+  width: 25em;
+  height: 39.1em;
   max-width: 75%;
   max-height: 75%;
   background: url("../images/beetroot.png") no-repeat;
@@ -176,12 +176,11 @@ body {
   .BeetRoot {
     position: absolute;
     top: 0;
-    left: 0;
-    width: 25.6em;
-    height: 40em;
-    max-width: 75%;
-    max-height: 75%;
+    left: -22em;
+    width: 23em;
+    height: 34.4em;
     background: url("../images/beetroot.png") no-repeat;
+    background-size: 21em 34.4em;
   }
 
   .Player {
