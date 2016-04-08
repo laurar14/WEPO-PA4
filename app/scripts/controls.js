@@ -13,7 +13,9 @@ window.Controls = (function() {
         40: 'down'
     };
     var audioPlayer = document.getElementById('audio');
+    var audioPlayerExtra = document.getElementById('audioExtra');
     var soundButton = document.getElementById('mute');
+
     soundButton.addEventListener('click', function (e)
     {
         if (soundButton.getAttribute('data-text-swap') === soundButton.innerHTML) {
@@ -25,6 +27,7 @@ window.Controls = (function() {
         }
         e = e || window.event;
         audioPlayer.muted = !audioPlayer.muted;
+        audioPlayerExtra.muted = !audioPlayerExtra.muted;
         e.preventDefault();
     }, false);
 
