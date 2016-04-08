@@ -48,6 +48,10 @@ window.Player = (function() {
 
 		else if(self.started){
 			self.pos.y += delta * SPEED;
+		} 
+
+		if(Controls.keys.up){
+			console.log(this.game.beetroot.pos.x);
 		}
 		this.checkCollisionWithBounds();
 
@@ -90,6 +94,7 @@ window.Player = (function() {
 			} else {
 				raised = false;
 			}
+
 		}
 
 		document.getElementById('onScreenScore').innerHTML = this.score;
