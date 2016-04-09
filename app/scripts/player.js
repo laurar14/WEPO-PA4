@@ -13,6 +13,7 @@ window.Player = (function() {
 
 	var raised		= false;
 	var movedUpLast	= false;
+	var innerPlayer;
 
 	var Player = function(el, game) {
 		this.el			= el;
@@ -20,6 +21,7 @@ window.Player = (function() {
 		this.pos		= { x: 0, y: 0 };
 		this.score		= 0;
 		this.starSound	= document.getElementById('flappingAudio');
+		innerPlayer		= $(this.el).children();
 	};
 
 	/**
@@ -33,6 +35,10 @@ window.Player = (function() {
 		this.score		= 0;
 		SPEED			= level;
 		this.el.css('animation', '0.6s ebbing alternate infinite');
+		if(!innerPlayer.hasClass('Player')) {
+			innerPlayer.removeClass().addClass('Player');
+			innerPlayer.removeAttr('style');
+		}
 	};
 
 	Player.prototype.onFrame = function(delta) {
@@ -70,11 +76,34 @@ window.Player = (function() {
 		var beetroot	= (this.game.beetroot);
 		var beetX		= beetroot.pos.x;
 
-		if(
-			this.pos.y < 0 ||
-			this.pos.y + HEIGHT > this.game.WORLD_HEIGHT ||
-			(beetX < 22 && beetX > -10 && this.pos.y >= beetroot.pos.y-5)
-			) {
+		if(this.pos.y < 0 || this.pos.y + HEIGHT > this.game.WORLD_HEIGHT ||
+			(beetX < 22 && beetX > -10 && this.pos.y >= beetroot.pos.y-5)) {
+
+			if(beetX < 22 && beetX > -10 && this.pos.y >= beetroot.pos.y-5) {
+				innerPlayer.removeClass().addClass('Player2');
+
+				//These values must be calculated upon collision for resizing
+				//and positioning correctly
+				var windowWidth = $(window).width();
+				var groundHeight = $('.ground').height();
+				var height = $('.Player2').height();
+				var canvasHeight = $(this.el).parent().height();
+
+				this.pos.y = (canvasHeight - (groundHeight + height))/10;
+				if(windowWidth <= 380) {
+					this.pos.x = (beetroot.pos.x + 5);
+				}
+				else {
+					this.pos.x = (beetroot.pos.x + 20);
+				}
+			}
+			else {
+				innerPlayer.removeClass().addClass('UnicornExplode');
+				innerPlayer.bind('animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd',
+								 function() {
+									$(this).css('visibility', 'hidden');
+								});
+			}
 			audioExtra.src	= '../sounds/neigh.wav';
 			audioExtra.loop	= false;
 			audioExtra.play();

@@ -14,7 +14,7 @@ window.Game = (function() {
 		this.el			= el;
 		this.level		= 30;
 		this.beetroot	= new window.BeetRoot(this.el.find('.BeetRoot'), self);
-		this.player	= new window.Player(this.el.find('.playerBlock'), this);
+		this.player		= new window.Player(this.el.find('.playerBlock'), this);
 		this.isPlaying	= false;
 		// Cache a bound onFrame since we need it each frame.
 		this.onFrame	= this.onFrame.bind(this);

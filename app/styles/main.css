@@ -15,7 +15,11 @@
 }
 
 .Levels.is-visible {
-  -webkit-transform: none;
+  transform: none;
+  -ms-transform: none; /* IE 9 */
+  -moz-transform: none; /* Firefox */
+  -webkit-transform: none; /* Safari and Chrome */
+  -o-transform: none; /* Opera */
 }
 
 body {
@@ -69,6 +73,29 @@ footer a:hover, footer a:focus {
   left: -20em;
   background: url("../images/riding_dabs.png") no-repeat;
   animation: unicorn-fly .5s steps(2) infinite;
+  -webkit-transform-style: preserve-3d;
+}
+
+.Player2 {
+  position: absolute;
+  width: 5.1em;
+  height: 9.9em;
+  top: 0;
+  left: -20em;
+  background: url("../images/dabs_luv.png") no-repeat;
+  animation: beetroot-hug 1.5s steps(4) infinite;
+  -webkit-transform-style: preserve-3d;
+}
+
+.UnicornExplode {
+  position: absolute;
+  width: 12.8em;
+  height: 12.8em;
+  top: 0;
+  left: -20em;
+  background: url("../images/unicorn_explode.png") no-repeat;
+  animation: unicorn-explode .2s steps(2);
+  -webkit-transform-style: preserve-3d;
 }
 
 .BeetRoot {
@@ -84,20 +111,29 @@ footer a:hover, footer a:focus {
 }
 
 .btn-group-vertical {
-   padding-bottom: 1.5em;
+  padding-bottom: 1.8em;
 }
 
 .Scoreboard {
   position: absolute;
   left: 50%;
-  top: 10em;
-  min-height: 30em;
+  top: 13em;
+  min-height: 28em;
   width: 30em;
   margin-left: -15em;
   box-sizing: border-box;
   background: purple;
+
+  transform: translate(0, -44em);
+  -ms-transform: translate(0, -44em); /* IE 9 */
+  -o-transform: translate(0, -44em); /* Opera */
   -webkit-transform: translate(0, -44em);
-  -webkit-transition: -webkit-transform 0.5s;
+
+  transition:  transform 0.5s;
+  -ms-transition: transform 0.5s; /* IE 9 */
+  -o-transition: transform 0.5s;
+  -webkit-transition: transform 0.5s;
+
   opacity: 0.95;
   border-radius: 25px;
   border: 0.2em solid white;
@@ -106,11 +142,14 @@ footer a:hover, footer a:focus {
 }
 
 .Scoreboard.is-visible {
-  -webkit-transform: none;
+  transform: none;
+  -ms-transform: none; /* IE 9 */
+  -moz-transform: none; /* Firefox */
+  -webkit-transform: none; /* Safari and Chrome */
+  -o-transform: none; /* Opera */
 }
 
 .Scoreboard-scoreText {
-  padding-top: 2em;
   font-family: 'Courier New', monospace;
   font-size: 2.7em;
   font-weight: 900;
@@ -139,8 +178,19 @@ footer a:hover, footer a:focus {
   color: #000;
   padding: 0.2em 0;
 }
- 
+
 #GameCanvasBackground {
+  font-size: 10px;
+  position: relative;
+  width: 100%;
+  height: 57.6em;
+  overflow: hidden;
+  background: url("../images/background2.png") repeat-x;
+  background-position: 0 23em ;
+  background-color: #bed5f1;
+}
+
+/*#GameCanvasBackground {
   font-size: 10px;
   position: relative;
   width: 100%;
@@ -149,7 +199,7 @@ footer a:hover, footer a:focus {
   background: url("../images/background.png") repeat-x;
   background-position: 0 -5.5em;
   background-size: contain;
-}
+}*/
 
 #onScreenScore {
   position: absolute;
@@ -170,13 +220,19 @@ footer a:hover, footer a:focus {
   position: absolute;
 }
 
+
 @keyframes bgMove {
-  from { background-position: 0 -5.5em; }
-  to { background-position: -102.4em -5.5em; }
+  from { background-position: 0 23em; }
+  to { background-position: -102.4em 23em; }
 }
 
+/*@keyframes bgMove {
+  from { background-position: 0 -5.5em; }
+  to { background-position: -102.4em -5.5em; }
+}*/
+
 @keyframes bgMove2 {
-  from { background-position: 0 0e; }
+  from { background-position: 0 0; }
   to { background-position: -102.4em 0; }
 }
 
@@ -186,13 +242,23 @@ footer a:hover, footer a:focus {
 }
 
 @keyframes unicorn-fly {
-  from { background-position: 0em; }
+  from { background-position: 0; }
   to { background-position: -30em; }
+}
+
+@keyframes beetroot-hug {
+  from { background-position: 0; }
+  to { background-position: -20.4em; }
+}
+@keyframes unicorn-explode {
+  from { background-position: 0; }
+  to { background-position: -25.6em; }
 }
 
 @media screen and (max-height: 568px) and (max-width: 380px) {
   #GameCanvasBackground {
     height: 51.2em;
+    background-position: 0 17em;
   }
 
   .ground {
@@ -211,9 +277,16 @@ footer a:hover, footer a:focus {
   }
 
   .Scoreboard {
+    top: 6.8em;
     left: 16.6em;
     min-height: 28em;
     width: 25em;
+    padding: 0 3em;
+  }
+
+  @keyframes bgMove {
+    from { background-position: 0 17em; }
+    to { background-position: -102.4em 17em; }
   }
 }
 
