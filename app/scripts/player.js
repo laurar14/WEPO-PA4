@@ -90,7 +90,7 @@ window.Player = (function() {
 				var canvasHeight = $(this.el).parent().height();
 
 				this.pos.y = (canvasHeight - (groundHeight + height))/10;
-				if(windowWidth <= 380) {
+				if(windowWidth <= 340) {
 					this.pos.x = (beetroot.pos.x + 5);
 				}
 				else {

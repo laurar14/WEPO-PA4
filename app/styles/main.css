@@ -255,7 +255,7 @@ footer a:hover, footer a:focus {
   to { background-position: -25.6em; }
 }
 
-@media screen and (max-height: 568px) and (max-width: 380px) {
+@media screen and (max-height: 568px) and (max-width: 340px) {
   #GameCanvasBackground {
     height: 51.2em;
     background-position: 0 17em;
