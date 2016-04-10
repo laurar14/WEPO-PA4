@@ -27,6 +27,9 @@ module.exports = function (grunt) {
 
         // Watches files for changes and runs tasks based on the changed files
         watch: {
+
+            files: [ '<%= config.app %>/sounds/*'],
+
             bower: {
                 files: ['bower.json'],
                 tasks: ['bowerInstall']
@@ -61,7 +64,7 @@ module.exports = function (grunt) {
                 files: [
                     '<%= config.app %>/{,*/}*.html',
                     '.tmp/styles/{,*/}*.css',
-                    '<%= config.app %>/sounds/{,*/}*.*',
+                    '<%= config.app %>/sounds/{,*/}*',
                     '<%= config.app %>/images/{,*/}*'
                 ]
             }
@@ -202,7 +205,7 @@ module.exports = function (grunt) {
                         '<%= config.dist %>/scripts/{,*/}*.js',
                         '<%= config.dist %>/styles/{,*/}*.css',
                         '<%= config.dist %>/images/{,*/}*.*',
-                        '<%= config.dist %>/sounds/{,*/}*.*',
+                        '<%= config.dist %>/sounds/{,*/}*',
                         '<%= config.dist %>/styles/fonts/{,*/}*.*',
                         '<%= config.dist %>/*.{ico,png}'
                     ]
@@ -302,7 +305,7 @@ module.exports = function (grunt) {
         // Copies remaining files to places other tasks can use
         copy: {
             dist: {
-                files: [{ 
+                files: [{
                     expand: true,
                     dot: true,
                     cwd: '<%= config.app %>',
@@ -311,7 +314,7 @@ module.exports = function (grunt) {
                         '*.{ico,png,txt}',
                         '.htaccess',
                         'images/{,*/}*.webp',
-                        'sounds/*.*',
+                        'sounds/*',
                         '{,*/}*.html',
                         'styles/fonts/{,*/}*.*'
                     ]
