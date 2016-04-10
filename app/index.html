@@ -9,6 +9,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         <link rel="shortcut icon" href="/favicon.ico">
+        <!--<link rel="shortcut icon" href="/unicorn_favicon.ico">-->
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <!-- build:css styles/vendor.css -->
         <!-- bower:css -->
@@ -22,51 +23,44 @@
         <script type="text/javascript" src="https://getfirebug.com/firebug-lite.js"></script>-->
     </head>
     <body>
-
-    <div class="container well">                  
-        <!--[if lt IE 10]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-        <div id="GameCanvasBackground">
-            <div id="onScreenScore"></div>
-            <div class="audioPlayer pull-left well well-sm">
-                
-                <button id="mute" type="button" class="btn btn-primary btn-xs">
-                    <span id="iconSpan" class='glyphicon glyphicon-volume-up'></span> Music On
-                </button>
-                
-                <button id="muteSound" type="button" class="btn btn-primary btn-xs">
-                    <span id="iconSpanSound" class='glyphicon glyphicon-volume-up'></span> Sound On
-                </button>
-
-                <audio id="audio" src="../sounds/circus_8bit.wav" autoplay loop></audio>
-                <audio id="audioExtra" src="../sounds/gallop.wav"></audio>
-                <audio id="flappingAudio" src="../sounds/star.wav"></audio>
-                <audio id="gameOverAudio" src="../sounds/gameover_8bit.wav"></audio>
-            </div>
-
-            <div class="GameCanvas">
-                <div class="BeetRoot"></div>
-                <div class="playerBlock">
-                    <div class="Player"></div>
+        <div class="container well">                  
+            <!--[if lt IE 10]>
+                <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+            <![endif]-->
+            <div id="GameCanvasBackground">
+                <div id="onScreenScore"></div>
+                <div class="audioPlayer pull-left well well-sm">                    
+                    <button id="mute" type="button" class="btn btn-primary btn-xs">
+                        <span id="iconSpan" class='glyphicon glyphicon-volume-up'></span> Music On
+                    </button>
+                    <button id="muteSound" type="button" class="btn btn-primary btn-xs">
+                        <span id="iconSpanSound" class='glyphicon glyphicon-volume-up'></span> Sound On
+                    </button>
+                    <audio id="audio" src="../sounds/circus_8bit.wav" autoplay loop></audio>
+                    <audio id="audioExtra" src="../sounds/gallop.wav"></audio>
+                    <audio id="flappingAudio" src="../sounds/star.wav"></audio>
+                    <audio id="gameOverAudio" src="../sounds/gameover_8bit.wav"></audio>
                 </div>
-                <div class="ground"></div>
-
-                <div class="Scoreboard text-center">
-                    <br>
-                    <div class="Scoreboard-scoreText">Score:
-                        <span id="score"></span>
+                <div class="GameCanvas">
+                    <div class="BeetRoot"></div>
+                    <div class="playerBlock">
+                        <div class="Player"></div>
                     </div>
-                    <div class="Scoreboard-scoreText">Highscore:
-                        <span id="highscore"></span>
+                    <div class="ground"></div>
+                    <div class="Scoreboard text-center">
+                        <br>
+                        <div class="Scoreboard-scoreText">Score:
+                            <span id="score"></span>
+                        </div>
+                        <div class="Scoreboard-scoreText">Highscore:
+                            <span id="highscore"></span>
+                        </div>
+                        <div class="btn-group-vertical text-center" role="group">
+                            <button type="button" class="btn Levels-button Levels-button-easy">Easy</button>
+                            <button type="button" class="btn Levels-button Levels-button-medium">Medium</button>
+                            <button type="button" class="btn Levels-button Levels-button-hard">Hard</button>
+                        </div>
                     </div>
-                    <div class="btn-group-vertical text-center" role="group">
-                        <button type="button" class="btn Levels-button Levels-button-easy">Easy</button>
-                        <button type="button" class="btn Levels-button Levels-button-medium">Medium</button>
-                        <button type="button" class="btn Levels-button Levels-button-hard">Hard</button>
-                    </div>
-                </div>
-
                 </div>
             </div>
             <footer class="well well-xs text-center">
@@ -76,7 +70,6 @@
                 <a href="mailto:vedise13@ru.is">vedise13@ru.is</a></small>
             </footer>
         </div> 
-
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
         <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -92,5 +85,5 @@
         <script src="scripts/beetroot.js"></script>
         <script src="scripts/utils.js"></script>
         <!-- endbuild -->
-</body>
+    </body>
 </html>
