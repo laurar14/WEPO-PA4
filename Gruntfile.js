@@ -302,7 +302,7 @@ module.exports = function (grunt) {
         // Copies remaining files to places other tasks can use
         copy: {
             dist: {
-                files: [{
+                files: [{ 
                     expand: true,
                     dot: true,
                     cwd: '<%= config.app %>',
