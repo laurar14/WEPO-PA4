@@ -1,4 +1,4 @@
 .tmp
 .sass-cache
 test/bower_components
-app/**/Thumbs.db
+*/**/Thumbs.db
