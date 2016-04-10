@@ -69,7 +69,7 @@ window.Game = (function() {
 		window.requestAnimationFrame(this.onFrame);
 		this.isPlaying = true;
 
-		audio.src = '../circus_8bit.wav';
+		audio.src = '../sounds/circus_8bit.wav';
 		audio.loop = true;
 	};
 
@@ -111,7 +111,7 @@ window.Game = (function() {
 			that.start(90);
 		});
 
-		audio.src	= '../gameover_8bit.wav';
+		audio.src	= '../sounds/gameover_8bit.wav';
 		audio.loop	= false;
 	};
 
