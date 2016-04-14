@@ -44,6 +44,12 @@ window.Player = (function() {
 	Player.prototype.onFrame = function(delta) {
 		var self = this;
 
+		$('#GameCanvasBackground').on({'touchstart' : function() {
+			Controls.keys.space = true;
+		}});
+		$('#GameCanvasBackground').on({'touchend' : function() {
+			Controls.keys.space = false;
+		}});
 		$('#GameCanvasBackground').mousedown(function() {
 			Controls.keys.space = true;
 		});
