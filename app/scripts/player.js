@@ -44,18 +44,12 @@ window.Player = (function() {
 	Player.prototype.onFrame = function(delta) {
 		var self = this;
 
-		$('#GameCanvasBackground').on({'touchstart' : function() {
+		$('#GameCanvasBackground').on({'touchstart mousedown' : function() {
 			Controls.keys.space = true;
 		}});
-		$('#GameCanvasBackground').on({'touchend' : function() {
+		$('#GameCanvasBackground').on({'touchend mouseup' : function() {
 			Controls.keys.space = false;
 		}});
-		$('#GameCanvasBackground').mousedown(function() {
-			Controls.keys.space = true;
-		});
-		$('#GameCanvasBackground').mouseup(function() {
-			Controls.keys.space = false;
-		});
 
 		if(Controls.keys.space) {
 			self.started = true;
