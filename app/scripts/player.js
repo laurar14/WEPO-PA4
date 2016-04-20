@@ -28,7 +28,7 @@ window.Player = (function() {
 	 * Resets the state of the player for a new game.
 	 */
 	Player.prototype.reset = function(level) {
-		audioExtra.src	= '../sounds/gallop.wav';
+		audioExtra.src	= '/WEPO-PA4/app/sounds/gallop.wav';
 		this.started	= false;
 		this.pos.x		= INITIAL_POSITION_X;
 		this.pos.y		= INITIAL_POSITION_Y;
@@ -104,7 +104,7 @@ window.Player = (function() {
 									$(this).css('visibility', 'hidden');
 								});
 			}
-			audioExtra.src	= '../sounds/neigh.wav';
+			audioExtra.src	= '/WEPO-PA4/app/sounds/neigh.wav';
 			audioExtra.loop	= false;
 			audioExtra.play();
 			document.getElementById('score').innerHTML = this.score;
