@@ -28,7 +28,7 @@ window.Player = (function() {
 	 * Resets the state of the player for a new game.
 	 */
 	Player.prototype.reset = function(level) {
-		audioExtra.src	= '../sounds/gallop.wav';
+		audioExtra.src	= './app/sounds/gallop.wav';
 		this.started	= false;
 		this.pos.x		= INITIAL_POSITION_X;
 		this.pos.y		= INITIAL_POSITION_Y;
